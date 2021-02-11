@@ -1,0 +1,851 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.panaceasoft.flutterrestaurant"
+4    android:versionCode="8"
+5    android:versionName="1.7.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="29" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:8:5-67
+14-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:8:22-64
+15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+15-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:9:5-81
+15-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:9:22-78
+16    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+16-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:10:5-80
+16-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:10:22-77
+17    <uses-permission android:name="android.permission.VIBRATE" />
+17-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:11:5-66
+17-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:11:22-63
+18    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+18-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:12:5-80
+18-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:12:22-78
+19    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+19-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:13:5-79
+19-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:13:22-76
+20    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+20-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:14:5-81
+20-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:14:22-78
+21    <uses-permission android:name="android.permission.CAMERA" />
+21-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:15:5-65
+21-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:15:22-62
+22    <uses-permission android:name="android.permission.FLASHLIGHT" />
+22-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:16:5-69
+22-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:16:22-66
+23    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+23-->[:connectivity] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\connectivity\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-79
+23-->[:connectivity] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\connectivity\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-76
+24    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+24-->[:connectivity] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\connectivity\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-76
+24-->[:connectivity] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\connectivity\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-73
+25
+26    <uses-feature
+26-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\e22f7de9537b93a0daf0af5a80b1174d\jetified-play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
+27        android:glEsVersion="0x00020000"
+27-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\e22f7de9537b93a0daf0af5a80b1174d\jetified-play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
+28        android:required="true" />
+28-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\e22f7de9537b93a0daf0af5a80b1174d\jetified-play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
+29
+30    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+30-->[com.google.android.gms:play-services-measurement-api:17.4.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\0c8042de58d8dbbf57a7ba0d7f40c955\jetified-play-services-measurement-api-17.4.1\AndroidManifest.xml:24:5-68
+30-->[com.google.android.gms:play-services-measurement-api:17.4.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\0c8042de58d8dbbf57a7ba0d7f40c955\jetified-play-services-measurement-api-17.4.1\AndroidManifest.xml:24:22-65
+31    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+31-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\11f5d91d268b1eaea6aa4a1466279f67\jetified-firebase-iid-20.1.7\AndroidManifest.xml:26:5-82
+31-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\11f5d91d268b1eaea6aa4a1466279f67\jetified-firebase-iid-20.1.7\AndroidManifest.xml:26:22-79
+32    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+32-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\b6305b830609fa629d5e56fd1ce956f9\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:26:5-110
+32-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\b6305b830609fa629d5e56fd1ce956f9\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:26:22-107
+33
+34    <uses-feature
+34-->[io.card:android-sdk:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8a30dc28eee31a76c6b43a2df6c5dfdc\jetified-android-sdk-5.5.1\AndroidManifest.xml:12:5-14:36
+35        android:name="android.hardware.camera"
+35-->[io.card:android-sdk:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8a30dc28eee31a76c6b43a2df6c5dfdc\jetified-android-sdk-5.5.1\AndroidManifest.xml:13:9-47
+36        android:required="false" />
+36-->[io.card:android-sdk:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8a30dc28eee31a76c6b43a2df6c5dfdc\jetified-android-sdk-5.5.1\AndroidManifest.xml:14:9-33
+37    <uses-feature
+37-->[io.card:android-sdk:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8a30dc28eee31a76c6b43a2df6c5dfdc\jetified-android-sdk-5.5.1\AndroidManifest.xml:15:5-17:36
+38        android:name="android.hardware.camera.autofocus"
+38-->[io.card:android-sdk:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8a30dc28eee31a76c6b43a2df6c5dfdc\jetified-android-sdk-5.5.1\AndroidManifest.xml:16:9-57
+39        android:required="false" /> <!-- Permission will be merged into the manifest of the hosting app. -->
+39-->[io.card:android-sdk:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8a30dc28eee31a76c6b43a2df6c5dfdc\jetified-android-sdk-5.5.1\AndroidManifest.xml:17:9-33
+40    <!-- Is required to launch foreground extraction service for targetSdkVersion 28+. -->
+41    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+41-->[com.google.android.play:core:1.8.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\936c1398c16bb77c2ed8abe3d8e12a80\jetified-core-1.8.0\AndroidManifest.xml:8:3-74
+41-->[com.google.android.play:core:1.8.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\936c1398c16bb77c2ed8abe3d8e12a80\jetified-core-1.8.0\AndroidManifest.xml:8:20-72
+42    <!--
+43 android:name="io.flutter.app.FlutterApplication"
+44    android:name="io.flutter.app.FlutterApplication"
+45    android:name=".Application"
+46    -->
+47    <application
+47-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:20:5-85:19
+48        android:name="com.panaceasoft.flutterrestaurant.Application"
+48-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:21:9-36
+49        android:allowBackup="true"
+49-->[org.jfrog.cardinalcommerce.gradle:cardinalmobilesdk:2.2.1-2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6cdce58bd30a896ccb4258c44ed83c03\jetified-cardinalmobilesdk-2.2.1-2\AndroidManifest.xml:14:9-35
+50        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+50-->[androidx.core:core:1.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a783131aa8acde9003b18bd318c486a2\core-1.3.1\AndroidManifest.xml:24:18-86
+51        android:debuggable="true"
+52        android:icon="@mipmap/ic_launcher"
+52-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:25:9-43
+53        android:label="Flutter Restaurant"
+53-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:23:9-43
+54        android:supportsRtl="true"
+54-->[com.braintreepayments.api:drop-in:4.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6893ae413d7956c360ea91d2ce61a7db\jetified-drop-in-4.5.0\AndroidManifest.xml:16:9-35
+55        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+55-->[:stripe_payment] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\stripe_payment\intermediates\library_manifest\debug\AndroidManifest.xml:11:18-74
+56        android:usesCleartextTraffic="true" >
+56-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:24:9-44
+57        <activity
+57-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:26:9-50:20
+58            android:name="com.panaceasoft.flutterrestaurant.MainActivity"
+58-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:27:13-41
+59            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+59-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:30:13-163
+60            android:hardwareAccelerated="true"
+60-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:31:13-47
+61            android:launchMode="singleTop"
+61-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:28:13-43
+62            android:theme="@style/LaunchTheme"
+62-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:29:13-47
+63            android:windowSoftInputMode="adjustResize" >
+63-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:32:13-55
+64
+65            <!--
+66                 This keeps the window background of the activity showing
+67                 until Flutter renders its first frame. It can be removed if
+68                 there is no splash screen (such as the default splash screen
+69                 defined in @style/LaunchTheme).
+70            -->
+71            <meta-data
+71-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:37:13-39:40
+72                android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
+72-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:38:17-82
+73                android:value="true" />
+73-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:39:17-37
+74
+75            <intent-filter>
+75-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:41:13-44:29
+76                <action android:name="android.intent.action.MAIN" />
+76-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:42:17-68
+76-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:42:25-66
+77
+78                <category android:name="android.intent.category.LAUNCHER" />
+78-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:43:17-76
+78-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:43:27-74
+79            </intent-filter>
+80            <intent-filter>
+80-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:45:13-48:29
+81                <action android:name="FLUTTER_NOTIFICATION_CLICK" />
+81-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:46:17-69
+81-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:46:25-66
+82
+83                <category android:name="android.intent.category.DEFAULT" />
+83-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:47:17-76
+83-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:47:27-73
+84            </intent-filter>
+85        </activity>
+86        <activity
+86-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:51:9-59:20
+87            android:name="com.braintreepayments.api.BraintreeBrowserSwitchActivity"
+87-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:51:19-90
+88            android:launchMode="singleTask" >
+88-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:52:13-44
+89            <intent-filter>
+89-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:53:13-58:29
+90                <action android:name="android.intent.action.VIEW" />
+90-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:54:17-69
+90-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:54:25-66
+91
+92                <category android:name="android.intent.category.DEFAULT" />
+92-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:47:17-76
+92-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:47:27-73
+93                <category android:name="android.intent.category.BROWSABLE" />
+93-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:56:17-78
+93-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:56:27-75
+94
+95                <data android:scheme="com.panaceasoft.flutterrestaurant.braintree" />
+96            </intent-filter>
+97        </activity>
+98
+99        <meta-data
+99-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:60:9-61:46
+100            android:name="com.facebook.sdk.ApplicationId"
+100-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:60:20-65
+101            android:value="@string/facebook_app_id" />
+101-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:61:5-44
+102        <!-- TODO: Replace with your real AdMob app ID -->
+103        <meta-data
+103-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:63:5-65:66
+104            android:name="com.google.android.gms.ads.APPLICATION_ID"
+104-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:64:13-69
+105            android:value="@string/android__admob_ads_id_key" />
+105-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:65:13-63
+106
+107        <activity
+107-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:66:9-69:40
+108            android:name="com.facebook.FacebookActivity"
+108-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:66:19-63
+109            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+109-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:67:5-101
+110            android:label="@string/app_name"
+110-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:69:5-37
+111            android:theme="@style/com_facebook_activity_theme" />
+111-->[com.facebook.android:facebook-common:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6783a3fdb470f06f2af62b7fc50075a6\jetified-facebook-common-5.5.1\AndroidManifest.xml:32:13-63
+112        <activity
+112-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:70:9-79:20
+113            android:name="com.facebook.CustomTabActivity"
+113-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:71:13-58
+114            android:exported="true" >
+114-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:72:13-36
+115            <intent-filter>
+115-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:73:13-78:29
+116                <action android:name="android.intent.action.VIEW" />
+116-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:54:17-69
+116-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:54:25-66
+117
+118                <category android:name="android.intent.category.DEFAULT" />
+118-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:47:17-76
+118-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:47:27-73
+119                <category android:name="android.intent.category.BROWSABLE" />
+119-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:56:17-78
+119-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:56:27-75
+120
+121                <data android:scheme="@string/fb_login_protocol_scheme" />
+122            </intent-filter>
+123        </activity>
+124
+125        <meta-data
+125-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:81:9-83:33
+126            android:name="flutterEmbedding"
+126-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:82:13-44
+127            android:value="2" />
+127-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:83:13-30
+128
+129        <activity
+129-->[:razorpay_flutter] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\razorpay_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:20
+130            android:name="com.razorpay.CheckoutActivity"
+130-->[:razorpay_flutter] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\razorpay_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-57
+131            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+131-->[com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a8e028b28b7df41e9b6952597f4a278e\jetified-checkout-1.5.16\AndroidManifest.xml:20:13-83
+132            android:label="Razorpay Checkout"
+132-->[:razorpay_flutter] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\razorpay_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-46
+133            android:theme="@style/CheckoutTheme" >
+133-->[com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a8e028b28b7df41e9b6952597f4a278e\jetified-checkout-1.5.16\AndroidManifest.xml:21:13-49
+134            <intent-filter>
+134-->[com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a8e028b28b7df41e9b6952597f4a278e\jetified-checkout-1.5.16\AndroidManifest.xml:22:13-28:29
+135                <action android:name="android.intent.action.MAIN" />
+135-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:42:17-68
+135-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:42:25-66
+136
+137                <data
+138                    android:host="rzp.io"
+139                    android:scheme="io.rzp" />
+140            </intent-filter>
+141        </activity>
+142
+143        <meta-data
+143-->[:stripe_payment] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\stripe_payment\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-14:36
+144            android:name="com.google.android.gms.wallet.api.enabled"
+144-->[:stripe_payment] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\stripe_payment\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-69
+145            android:value="true" />
+145-->[:stripe_payment] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\stripe_payment\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-33
+146
+147        <activity
+147-->[:stripe_payment] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\stripe_payment\intermediates\library_manifest\debug\AndroidManifest.xml:16:9-20:75
+148            android:name="com.gettipsi.stripe.OpenBrowserActivity"
+148-->[:stripe_payment] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\stripe_payment\intermediates\library_manifest\debug\AndroidManifest.xml:17:13-67
+149            android:exported="false"
+149-->[:stripe_payment] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\stripe_payment\intermediates\library_manifest\debug\AndroidManifest.xml:18:13-37
+150            android:launchMode="singleTask"
+150-->[:stripe_payment] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\stripe_payment\intermediates\library_manifest\debug\AndroidManifest.xml:19:13-44
+151            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+151-->[:stripe_payment] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\stripe_payment\intermediates\library_manifest\debug\AndroidManifest.xml:20:13-72
+152        <activity
+152-->[:stripe_payment] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\stripe_payment\intermediates\library_manifest\debug\AndroidManifest.xml:21:9-34:20
+153            android:name="com.gettipsi.stripe.RedirectUriReceiver"
+153-->[:stripe_payment] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\stripe_payment\intermediates\library_manifest\debug\AndroidManifest.xml:22:13-67
+154            android:exported="true"
+154-->[:stripe_payment] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\stripe_payment\intermediates\library_manifest\debug\AndroidManifest.xml:23:13-36
+155            android:launchMode="singleTask"
+155-->[:stripe_payment] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\stripe_payment\intermediates\library_manifest\debug\AndroidManifest.xml:24:13-44
+156            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
+156-->[:stripe_payment] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\stripe_payment\intermediates\library_manifest\debug\AndroidManifest.xml:25:13-83
+157            <intent-filter>
+157-->[:stripe_payment] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\stripe_payment\intermediates\library_manifest\debug\AndroidManifest.xml:26:13-33:29
+158                <action android:name="android.intent.action.VIEW" />
+158-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:54:17-69
+158-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:54:25-66
+159
+160                <category android:name="android.intent.category.DEFAULT" />
+160-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:47:17-76
+160-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:47:27-73
+161                <category android:name="android.intent.category.BROWSABLE" />
+161-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:56:17-78
+161-->E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\android\app\src\main\AndroidManifest.xml:56:27-75
+162
+163                <data android:scheme="example" />
+164            </intent-filter>
+165        </activity>
+166
+167        <service
+167-->[:firebase_auth] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+168            android:name="com.google.firebase.components.ComponentDiscoveryService"
+168-->[:firebase_auth] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
+169            android:directBootAware="true"
+169-->[com.google.firebase:firebase-common:19.3.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\e80826117f9961b481af711d153c1582\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
+170            android:exported="false" >
+170-->[com.google.firebase:firebase-messaging:20.1.7] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\f3215b70c29c742ec87033c07ef2aa9e\jetified-firebase-messaging-20.1.7\AndroidManifest.xml:37:13-37
+171            <meta-data
+171-->[:firebase_auth] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+172                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
+172-->[:firebase_auth] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+173                android:value="com.google.firebase.components.ComponentRegistrar" />
+173-->[:firebase_auth] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+174            <meta-data
+174-->[:firebase_messaging] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-16:85
+175                android:name="com.google.firebase.components:io.flutter.plugins.firebasemessaging.FlutterFirebaseAppRegistrar"
+175-->[:firebase_messaging] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-127
+176                android:value="com.google.firebase.components.ComponentRegistrar" />
+176-->[:firebase_messaging] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:16:17-82
+177            <meta-data
+177-->[:firebase_dynamic_links] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_dynamic_links\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-13:85
+178                android:name="com.google.firebase.components:io.flutter.plugins.firebasedynamiclinks.FlutterFirebaseAppRegistrar"
+178-->[:firebase_dynamic_links] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_dynamic_links\intermediates\library_manifest\debug\AndroidManifest.xml:12:17-130
+179                android:value="com.google.firebase.components.ComponentRegistrar" />
+179-->[:firebase_dynamic_links] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_dynamic_links\intermediates\library_manifest\debug\AndroidManifest.xml:13:17-82
+180            <meta-data
+180-->[:firebase_core] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+181                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+181-->[:firebase_core] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+182                android:value="com.google.firebase.components.ComponentRegistrar" />
+182-->[:firebase_core] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+183            <meta-data
+183-->[com.google.firebase:firebase-messaging:20.1.7] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\f3215b70c29c742ec87033c07ef2aa9e\jetified-firebase-messaging-20.1.7\AndroidManifest.xml:38:13-40:85
+184                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+184-->[com.google.firebase:firebase-messaging:20.1.7] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\f3215b70c29c742ec87033c07ef2aa9e\jetified-firebase-messaging-20.1.7\AndroidManifest.xml:39:17-119
+185                android:value="com.google.firebase.components.ComponentRegistrar" />
+185-->[com.google.firebase:firebase-messaging:20.1.7] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\f3215b70c29c742ec87033c07ef2aa9e\jetified-firebase-messaging-20.1.7\AndroidManifest.xml:40:17-82
+186            <meta-data
+186-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\95bd9d8134f4cfa3997bce8c67a4d7d1\jetified-firebase-auth-19.3.1\AndroidManifest.xml:36:13-38:85
+187                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+187-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\95bd9d8134f4cfa3997bce8c67a4d7d1\jetified-firebase-auth-19.3.1\AndroidManifest.xml:37:17-109
+188                android:value="com.google.firebase.components.ComponentRegistrar" />
+188-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\95bd9d8134f4cfa3997bce8c67a4d7d1\jetified-firebase-auth-19.3.1\AndroidManifest.xml:38:17-82
+189            <meta-data
+189-->[com.google.firebase:firebase-dynamic-links:19.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\17e542d14f560f840edbcc32cbad3a0b\jetified-firebase-dynamic-links-19.1.0\AndroidManifest.xml:9:13-11:85
+190                android:name="com.google.firebase.components:com.google.firebase.dynamiclinks.internal.FirebaseDynamicLinkRegistrar"
+190-->[com.google.firebase:firebase-dynamic-links:19.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\17e542d14f560f840edbcc32cbad3a0b\jetified-firebase-dynamic-links-19.1.0\AndroidManifest.xml:10:17-133
+191                android:value="com.google.firebase.components.ComponentRegistrar" />
+191-->[com.google.firebase:firebase-dynamic-links:19.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\17e542d14f560f840edbcc32cbad3a0b\jetified-firebase-dynamic-links-19.1.0\AndroidManifest.xml:11:17-82
+192            <meta-data
+192-->[com.google.android.gms:play-services-measurement-api:17.4.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\0c8042de58d8dbbf57a7ba0d7f40c955\jetified-play-services-measurement-api-17.4.1\AndroidManifest.xml:30:13-32:85
+193                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+193-->[com.google.android.gms:play-services-measurement-api:17.4.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\0c8042de58d8dbbf57a7ba0d7f40c955\jetified-play-services-measurement-api-17.4.1\AndroidManifest.xml:31:17-139
+194                android:value="com.google.firebase.components.ComponentRegistrar" />
+194-->[com.google.android.gms:play-services-measurement-api:17.4.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\0c8042de58d8dbbf57a7ba0d7f40c955\jetified-play-services-measurement-api-17.4.1\AndroidManifest.xml:32:17-82
+195            <meta-data
+195-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\11f5d91d268b1eaea6aa4a1466279f67\jetified-firebase-iid-20.1.7\AndroidManifest.xml:32:13-34:85
+196                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+196-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\11f5d91d268b1eaea6aa4a1466279f67\jetified-firebase-iid-20.1.7\AndroidManifest.xml:33:17-96
+197                android:value="com.google.firebase.components.ComponentRegistrar" />
+197-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\11f5d91d268b1eaea6aa4a1466279f67\jetified-firebase-iid-20.1.7\AndroidManifest.xml:34:17-82
+198            <meta-data
+198-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a2889e78a02a880771fae24b52633502\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:28:13-30:85
+199                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+199-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a2889e78a02a880771fae24b52633502\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:29:17-115
+200                android:value="com.google.firebase.components.ComponentRegistrar" />
+200-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a2889e78a02a880771fae24b52633502\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:30:17-82
+201            <meta-data
+201-->[com.google.firebase:firebase-installations:16.3.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\4de110d9c95c288563f9c50b5f063727\jetified-firebase-installations-16.3.0\AndroidManifest.xml:17:13-19:85
+202                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+202-->[com.google.firebase:firebase-installations:16.3.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\4de110d9c95c288563f9c50b5f063727\jetified-firebase-installations-16.3.0\AndroidManifest.xml:18:17-127
+203                android:value="com.google.firebase.components.ComponentRegistrar" />
+203-->[com.google.firebase:firebase-installations:16.3.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\4de110d9c95c288563f9c50b5f063727\jetified-firebase-installations-16.3.0\AndroidManifest.xml:19:17-82
+204        </service>
+205        <service android:name="io.flutter.plugins.firebasemessaging.FlutterFirebaseMessagingService" >
+205-->[:firebase_messaging] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+205-->[:firebase_messaging] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-101
+206            <intent-filter>
+206-->[:firebase_messaging] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:29
+207                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+207-->[:firebase_messaging] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-78
+207-->[:firebase_messaging] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:10:25-75
+208            </intent-filter>
+209        </service>
+210
+211        <provider
+211-->[:share] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
+212            android:name="io.flutter.plugins.share.ShareFileProvider"
+212-->[:share] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-70
+213            android:authorities="com.panaceasoft.flutterrestaurant.flutter.share_provider"
+213-->[:share] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-74
+214            android:exported="false"
+214-->[:share] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
+215            android:grantUriPermissions="true" >
+215-->[:share] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
+216            <meta-data
+216-->[:share] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:68
+217                android:name="android.support.FILE_PROVIDER_PATHS"
+217-->[:share] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
+218                android:resource="@xml/flutter_share_file_paths" />
+218-->[:share] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-65
+219        </provider>
+220
+221        <activity
+221-->[:flutter_paystack] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\flutter_paystack\intermediates\library_manifest\debug\AndroidManifest.xml:10:9-12:54
+222            android:name="co.paystack.flutterpaystack.AuthActivity"
+222-->[:flutter_paystack] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\flutter_paystack\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-68
+223            android:theme="@style/Paystack.Dialog" />
+223-->[:flutter_paystack] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\flutter_paystack\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-51
+224        <activity
+224-->[:url_launcher] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
+225            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+225-->[:url_launcher] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
+226            android:exported="false"
+226-->[:url_launcher] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
+227            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+227-->[:url_launcher] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+228
+229        <provider
+229-->[:flutter_webview_plugin] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\flutter_webview_plugin\intermediates\library_manifest\debug\AndroidManifest.xml:9:9-18:20
+230            android:name="androidx.core.content.FileProvider"
+230-->[:flutter_webview_plugin] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\flutter_webview_plugin\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-62
+231            android:authorities="com.panaceasoft.flutterrestaurant.fileprovider"
+231-->[:flutter_webview_plugin] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\flutter_webview_plugin\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-64
+232            android:exported="false"
+232-->[:flutter_webview_plugin] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\flutter_webview_plugin\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-37
+233            android:grantUriPermissions="true" >
+233-->[:flutter_webview_plugin] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\flutter_webview_plugin\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-47
+234            <meta-data
+234-->[:share] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:68
+235                android:name="android.support.FILE_PROVIDER_PATHS"
+235-->[:share] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
+236                android:resource="@xml/filepaths" />
+236-->[:share] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-65
+237        </provider>
+238        <!--
+239             FirebaseMessagingService performs security checks at runtime,
+240             but set to not exported to explicitly avoid allowing another app to call it.
+241        -->
+242        <service
+242-->[com.google.firebase:firebase-messaging:20.1.7] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\f3215b70c29c742ec87033c07ef2aa9e\jetified-firebase-messaging-20.1.7\AndroidManifest.xml:28:9-34:19
+243            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+243-->[com.google.firebase:firebase-messaging:20.1.7] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\f3215b70c29c742ec87033c07ef2aa9e\jetified-firebase-messaging-20.1.7\AndroidManifest.xml:29:13-82
+244            android:exported="false" >
+244-->[com.google.firebase:firebase-messaging:20.1.7] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\f3215b70c29c742ec87033c07ef2aa9e\jetified-firebase-messaging-20.1.7\AndroidManifest.xml:30:13-37
+245            <intent-filter android:priority="-500" >
+245-->[:firebase_messaging] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:29
+246                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+246-->[:firebase_messaging] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-78
+246-->[:firebase_messaging] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:10:25-75
+247            </intent-filter>
+248        </service>
+249
+250        <activity
+250-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\102fd90400570b055c59e2a853852d03\jetified-play-services-auth-16.0.1\AndroidManifest.xml:23:9-27:75
+251            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+251-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\102fd90400570b055c59e2a853852d03\jetified-play-services-auth-16.0.1\AndroidManifest.xml:24:13-93
+252            android:excludeFromRecents="true"
+252-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\102fd90400570b055c59e2a853852d03\jetified-play-services-auth-16.0.1\AndroidManifest.xml:25:13-46
+253            android:exported="false"
+253-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\102fd90400570b055c59e2a853852d03\jetified-play-services-auth-16.0.1\AndroidManifest.xml:26:13-37
+254            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+254-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\102fd90400570b055c59e2a853852d03\jetified-play-services-auth-16.0.1\AndroidManifest.xml:27:13-72
+255        <!--
+256            Service handling Google Sign-In user revocation. For apps that do not integrate with
+257            Google Sign-In, this service will never be started.
+258        -->
+259        <service
+259-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\102fd90400570b055c59e2a853852d03\jetified-play-services-auth-16.0.1\AndroidManifest.xml:33:9-36:110
+260            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+260-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\102fd90400570b055c59e2a853852d03\jetified-play-services-auth-16.0.1\AndroidManifest.xml:34:13-89
+261            android:exported="true"
+261-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\102fd90400570b055c59e2a853852d03\jetified-play-services-auth-16.0.1\AndroidManifest.xml:35:13-36
+262            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" /> <!-- Needs to be explicitly declared on P+ -->
+262-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\102fd90400570b055c59e2a853852d03\jetified-play-services-auth-16.0.1\AndroidManifest.xml:36:13-107
+263        <uses-library
+263-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\e22f7de9537b93a0daf0af5a80b1174d\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+264            android:name="org.apache.http.legacy"
+264-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\e22f7de9537b93a0daf0af5a80b1174d\jetified-play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+265            android:required="false" />
+265-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\e22f7de9537b93a0daf0af5a80b1174d\jetified-play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+266
+267        <activity
+267-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\95bd9d8134f4cfa3997bce8c67a4d7d1\jetified-firebase-auth-19.3.1\AndroidManifest.xml:24:9-31:50
+268            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+268-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\95bd9d8134f4cfa3997bce8c67a4d7d1\jetified-firebase-auth-19.3.1\AndroidManifest.xml:25:13-85
+269            android:excludeFromRecents="true"
+269-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\95bd9d8134f4cfa3997bce8c67a4d7d1\jetified-firebase-auth-19.3.1\AndroidManifest.xml:26:13-46
+270            android:exported="true"
+270-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\95bd9d8134f4cfa3997bce8c67a4d7d1\jetified-firebase-auth-19.3.1\AndroidManifest.xml:27:13-36
+271            android:launchMode="singleTask"
+271-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\95bd9d8134f4cfa3997bce8c67a4d7d1\jetified-firebase-auth-19.3.1\AndroidManifest.xml:28:13-44
+272            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+272-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\95bd9d8134f4cfa3997bce8c67a4d7d1\jetified-firebase-auth-19.3.1\AndroidManifest.xml:29:13-102
+273            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+273-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\95bd9d8134f4cfa3997bce8c67a4d7d1\jetified-firebase-auth-19.3.1\AndroidManifest.xml:30:13-72
+274
+275        <receiver
+275-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\11f5d91d268b1eaea6aa4a1466279f67\jetified-firebase-iid-20.1.7\AndroidManifest.xml:37:9-44:20
+276            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+276-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\11f5d91d268b1eaea6aa4a1466279f67\jetified-firebase-iid-20.1.7\AndroidManifest.xml:38:13-78
+277            android:exported="true"
+277-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\11f5d91d268b1eaea6aa4a1466279f67\jetified-firebase-iid-20.1.7\AndroidManifest.xml:39:13-36
+278            android:permission="com.google.android.c2dm.permission.SEND" >
+278-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\11f5d91d268b1eaea6aa4a1466279f67\jetified-firebase-iid-20.1.7\AndroidManifest.xml:40:13-73
+279            <intent-filter>
+279-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\11f5d91d268b1eaea6aa4a1466279f67\jetified-firebase-iid-20.1.7\AndroidManifest.xml:41:13-43:29
+280                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+280-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\11f5d91d268b1eaea6aa4a1466279f67\jetified-firebase-iid-20.1.7\AndroidManifest.xml:42:17-81
+280-->[com.google.firebase:firebase-iid:20.1.7] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\11f5d91d268b1eaea6aa4a1466279f67\jetified-firebase-iid-20.1.7\AndroidManifest.xml:42:25-78
+281            </intent-filter>
+282        </receiver>
+283
+284        <activity
+284-->[com.google.android.gms:play-services-base:17.2.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\e10d72cd6e190a4e674aa24e249344c9\jetified-play-services-base-17.2.1\AndroidManifest.xml:23:9-26:75
+285            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+285-->[com.google.android.gms:play-services-base:17.2.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\e10d72cd6e190a4e674aa24e249344c9\jetified-play-services-base-17.2.1\AndroidManifest.xml:24:13-79
+286            android:exported="false"
+286-->[com.google.android.gms:play-services-base:17.2.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\e10d72cd6e190a4e674aa24e249344c9\jetified-play-services-base-17.2.1\AndroidManifest.xml:25:13-37
+287            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+287-->[com.google.android.gms:play-services-base:17.2.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\e10d72cd6e190a4e674aa24e249344c9\jetified-play-services-base-17.2.1\AndroidManifest.xml:26:13-72
+288        <activity
+288-->[com.stripe:stripe-android:10.4.6] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6ee1d1b1b01d42236baaffcb1403134e\jetified-stripe-android-10.4.6\AndroidManifest.xml:12:9-14:57
+289            android:name="com.stripe.android.view.AddPaymentMethodActivity"
+289-->[com.stripe:stripe-android:10.4.6] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6ee1d1b1b01d42236baaffcb1403134e\jetified-stripe-android-10.4.6\AndroidManifest.xml:13:13-76
+290            android:theme="@style/StripeDefaultTheme" />
+290-->[com.stripe:stripe-android:10.4.6] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6ee1d1b1b01d42236baaffcb1403134e\jetified-stripe-android-10.4.6\AndroidManifest.xml:14:13-54
+291        <activity
+291-->[com.stripe:stripe-android:10.4.6] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6ee1d1b1b01d42236baaffcb1403134e\jetified-stripe-android-10.4.6\AndroidManifest.xml:15:9-17:57
+292            android:name="com.stripe.android.view.PaymentMethodsActivity"
+292-->[com.stripe:stripe-android:10.4.6] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6ee1d1b1b01d42236baaffcb1403134e\jetified-stripe-android-10.4.6\AndroidManifest.xml:16:13-74
+293            android:theme="@style/StripeDefaultTheme" />
+293-->[com.stripe:stripe-android:10.4.6] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6ee1d1b1b01d42236baaffcb1403134e\jetified-stripe-android-10.4.6\AndroidManifest.xml:17:13-54
+294        <activity
+294-->[com.stripe:stripe-android:10.4.6] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6ee1d1b1b01d42236baaffcb1403134e\jetified-stripe-android-10.4.6\AndroidManifest.xml:18:9-20:57
+295            android:name="com.stripe.android.view.PaymentFlowActivity"
+295-->[com.stripe:stripe-android:10.4.6] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6ee1d1b1b01d42236baaffcb1403134e\jetified-stripe-android-10.4.6\AndroidManifest.xml:19:13-71
+296            android:theme="@style/StripeDefaultTheme" />
+296-->[com.stripe:stripe-android:10.4.6] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6ee1d1b1b01d42236baaffcb1403134e\jetified-stripe-android-10.4.6\AndroidManifest.xml:20:13-54
+297        <activity
+297-->[com.stripe:stripe-android:10.4.6] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6ee1d1b1b01d42236baaffcb1403134e\jetified-stripe-android-10.4.6\AndroidManifest.xml:21:9-23:57
+298            android:name="com.stripe.android.view.PaymentAuthWebViewActivity"
+298-->[com.stripe:stripe-android:10.4.6] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6ee1d1b1b01d42236baaffcb1403134e\jetified-stripe-android-10.4.6\AndroidManifest.xml:22:13-78
+299            android:theme="@style/StripeDefaultTheme" />
+299-->[com.stripe:stripe-android:10.4.6] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6ee1d1b1b01d42236baaffcb1403134e\jetified-stripe-android-10.4.6\AndroidManifest.xml:23:13-54
+300        <activity
+300-->[com.stripe:stripe-android:10.4.6] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6ee1d1b1b01d42236baaffcb1403134e\jetified-stripe-android-10.4.6\AndroidManifest.xml:24:9-26:57
+301            android:name="com.stripe.android.view.PaymentRelayActivity"
+301-->[com.stripe:stripe-android:10.4.6] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6ee1d1b1b01d42236baaffcb1403134e\jetified-stripe-android-10.4.6\AndroidManifest.xml:25:13-72
+302            android:theme="@style/StripeDefaultTheme" />
+302-->[com.stripe:stripe-android:10.4.6] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6ee1d1b1b01d42236baaffcb1403134e\jetified-stripe-android-10.4.6\AndroidManifest.xml:26:13-54
+303
+304        <provider
+304-->[com.sangcomz:FishBun:0.11.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\afd64630c8431d777c114cea1d890737\jetified-FishBun-0.11.2\AndroidManifest.xml:12:9-20:20
+305            android:name="com.sangcomz.fishbun.FishBunFileProvider"
+305-->[com.sangcomz:FishBun:0.11.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\afd64630c8431d777c114cea1d890737\jetified-FishBun-0.11.2\AndroidManifest.xml:13:13-68
+306            android:authorities="com.panaceasoft.flutterrestaurant.fishbunfileprovider"
+306-->[com.sangcomz:FishBun:0.11.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\afd64630c8431d777c114cea1d890737\jetified-FishBun-0.11.2\AndroidManifest.xml:14:13-71
+307            android:exported="false"
+307-->[com.sangcomz:FishBun:0.11.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\afd64630c8431d777c114cea1d890737\jetified-FishBun-0.11.2\AndroidManifest.xml:15:13-37
+308            android:grantUriPermissions="true" >
+308-->[com.sangcomz:FishBun:0.11.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\afd64630c8431d777c114cea1d890737\jetified-FishBun-0.11.2\AndroidManifest.xml:16:13-47
+309            <meta-data
+309-->[:share] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:68
+310                android:name="android.support.FILE_PROVIDER_PATHS"
+310-->[:share] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
+311                android:resource="@xml/provider_paths" />
+311-->[:share] E:\projects\RestaurentBoba\Mobile Source\Flutter-Restaurant\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-65
+312        </provider>
+313
+314        <activity
+314-->[com.sangcomz:FishBun:0.11.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\afd64630c8431d777c114cea1d890737\jetified-FishBun-0.11.2\AndroidManifest.xml:22:9-25:51
+315            android:name="com.sangcomz.fishbun.ui.album.AlbumActivity"
+315-->[com.sangcomz:FishBun:0.11.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\afd64630c8431d777c114cea1d890737\jetified-FishBun-0.11.2\AndroidManifest.xml:23:13-71
+316            android:label="@string/album"
+316-->[com.sangcomz:FishBun:0.11.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\afd64630c8431d777c114cea1d890737\jetified-FishBun-0.11.2\AndroidManifest.xml:24:13-42
+317            android:theme="@style/FishBunTheme" />
+317-->[com.sangcomz:FishBun:0.11.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\afd64630c8431d777c114cea1d890737\jetified-FishBun-0.11.2\AndroidManifest.xml:25:13-48
+318        <activity
+318-->[com.sangcomz:FishBun:0.11.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\afd64630c8431d777c114cea1d890737\jetified-FishBun-0.11.2\AndroidManifest.xml:26:9-28:51
+319            android:name="com.sangcomz.fishbun.ui.picker.PickerActivity"
+319-->[com.sangcomz:FishBun:0.11.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\afd64630c8431d777c114cea1d890737\jetified-FishBun-0.11.2\AndroidManifest.xml:27:13-73
+320            android:theme="@style/FishBunTheme" />
+320-->[com.sangcomz:FishBun:0.11.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\afd64630c8431d777c114cea1d890737\jetified-FishBun-0.11.2\AndroidManifest.xml:28:13-48
+321        <activity
+321-->[com.sangcomz:FishBun:0.11.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\afd64630c8431d777c114cea1d890737\jetified-FishBun-0.11.2\AndroidManifest.xml:29:9-31:54
+322            android:name="com.sangcomz.fishbun.ui.detail.DetailActivity"
+322-->[com.sangcomz:FishBun:0.11.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\afd64630c8431d777c114cea1d890737\jetified-FishBun-0.11.2\AndroidManifest.xml:30:13-73
+323            android:theme="@style/DetailViewTheme" />
+323-->[com.sangcomz:FishBun:0.11.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\afd64630c8431d777c114cea1d890737\jetified-FishBun-0.11.2\AndroidManifest.xml:31:13-51
+324        <activity
+324-->[com.braintreepayments.api:drop-in:4.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6893ae413d7956c360ea91d2ce61a7db\jetified-drop-in-4.5.0\AndroidManifest.xml:18:9-20:64
+325            android:name="com.braintreepayments.api.dropin.DropInActivity"
+325-->[com.braintreepayments.api:drop-in:4.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6893ae413d7956c360ea91d2ce61a7db\jetified-drop-in-4.5.0\AndroidManifest.xml:19:13-75
+326            android:theme="@style/bt_drop_in_activity_theme" />
+326-->[com.braintreepayments.api:drop-in:4.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6893ae413d7956c360ea91d2ce61a7db\jetified-drop-in-4.5.0\AndroidManifest.xml:20:13-61
+327        <activity
+327-->[com.braintreepayments.api:drop-in:4.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6893ae413d7956c360ea91d2ce61a7db\jetified-drop-in-4.5.0\AndroidManifest.xml:21:9-23:65
+328            android:name="com.braintreepayments.api.dropin.AddCardActivity"
+328-->[com.braintreepayments.api:drop-in:4.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6893ae413d7956c360ea91d2ce61a7db\jetified-drop-in-4.5.0\AndroidManifest.xml:22:13-76
+329            android:theme="@style/bt_add_card_activity_theme" />
+329-->[com.braintreepayments.api:drop-in:4.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6893ae413d7956c360ea91d2ce61a7db\jetified-drop-in-4.5.0\AndroidManifest.xml:23:13-62
+330        <activity
+330-->[com.braintreepayments.api:drop-in:4.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6893ae413d7956c360ea91d2ce61a7db\jetified-drop-in-4.5.0\AndroidManifest.xml:24:9-26:70
+331            android:name="com.braintreepayments.api.dropin.VaultManagerActivity"
+331-->[com.braintreepayments.api:drop-in:4.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6893ae413d7956c360ea91d2ce61a7db\jetified-drop-in-4.5.0\AndroidManifest.xml:25:13-81
+332            android:theme="@style/bt_vault_manager_activity_theme" />
+332-->[com.braintreepayments.api:drop-in:4.5.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6893ae413d7956c360ea91d2ce61a7db\jetified-drop-in-4.5.0\AndroidManifest.xml:26:13-67
+333        <activity
+333-->[com.stripe:stripe-3ds2-android:1.2.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\ac1c5c5f109d48e5ef705f837975a556\jetified-stripe-3ds2-android-1.2.2\AndroidManifest.xml:12:9-14:54
+334            android:name="com.stripe.android.stripe3ds2.views.ChallengeActivity"
+334-->[com.stripe:stripe-3ds2-android:1.2.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\ac1c5c5f109d48e5ef705f837975a556\jetified-stripe-3ds2-android-1.2.2\AndroidManifest.xml:13:13-81
+335            android:theme="@style/Stripe3DS2Theme" />
+335-->[com.stripe:stripe-3ds2-android:1.2.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\ac1c5c5f109d48e5ef705f837975a556\jetified-stripe-3ds2-android-1.2.2\AndroidManifest.xml:14:13-51
+336        <activity
+336-->[com.stripe:stripe-3ds2-android:1.2.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\ac1c5c5f109d48e5ef705f837975a556\jetified-stripe-3ds2-android-1.2.2\AndroidManifest.xml:15:9-17:54
+337            android:name="com.stripe.android.stripe3ds2.views.ChallengeProgressDialogActivity"
+337-->[com.stripe:stripe-3ds2-android:1.2.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\ac1c5c5f109d48e5ef705f837975a556\jetified-stripe-3ds2-android-1.2.2\AndroidManifest.xml:16:13-95
+338            android:theme="@style/Stripe3DS2Theme" />
+338-->[com.stripe:stripe-3ds2-android:1.2.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\ac1c5c5f109d48e5ef705f837975a556\jetified-stripe-3ds2-android-1.2.2\AndroidManifest.xml:17:13-51
+339
+340        <service android:name="com.braintreepayments.api.internal.AnalyticsIntentService" />
+340-->[com.braintreepayments.api:braintree:3.7.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\3fe75e275b39d0553a15a15315a6cbd9\jetified-braintree-3.7.2\AndroidManifest.xml:17:9-93
+340-->[com.braintreepayments.api:braintree:3.7.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\3fe75e275b39d0553a15a15315a6cbd9\jetified-braintree-3.7.2\AndroidManifest.xml:17:18-90
+341
+342        <activity android:name="com.braintreepayments.api.ThreeDSecureActivity" />
+342-->[com.braintreepayments.api:braintree:3.7.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\3fe75e275b39d0553a15a15315a6cbd9\jetified-braintree-3.7.2\AndroidManifest.xml:19:9-83
+342-->[com.braintreepayments.api:braintree:3.7.2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\3fe75e275b39d0553a15a15315a6cbd9\jetified-braintree-3.7.2\AndroidManifest.xml:19:19-80
+343        <activity android:name="com.facebook.CustomTabMainActivity" />
+343-->[com.facebook.android:facebook-common:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6783a3fdb470f06f2af62b7fc50075a6\jetified-facebook-common-5.5.1\AndroidManifest.xml:33:9-71
+343-->[com.facebook.android:facebook-common:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6783a3fdb470f06f2af62b7fc50075a6\jetified-facebook-common-5.5.1\AndroidManifest.xml:33:19-68
+344
+345        <provider
+345-->[com.google.firebase:firebase-common:19.3.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\e80826117f9961b481af711d153c1582\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
+346            android:name="com.google.firebase.provider.FirebaseInitProvider"
+346-->[com.google.firebase:firebase-common:19.3.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\e80826117f9961b481af711d153c1582\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
+347            android:authorities="com.panaceasoft.flutterrestaurant.firebaseinitprovider"
+347-->[com.google.firebase:firebase-common:19.3.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\e80826117f9961b481af711d153c1582\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
+348            android:exported="false"
+348-->[com.google.firebase:firebase-common:19.3.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\e80826117f9961b481af711d153c1582\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
+349            android:initOrder="100" />
+349-->[com.google.firebase:firebase-common:19.3.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\e80826117f9961b481af711d153c1582\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+350
+351        <receiver
+351-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\b6305b830609fa629d5e56fd1ce956f9\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:29:9-33:20
+352            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+352-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\b6305b830609fa629d5e56fd1ce956f9\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:30:13-85
+353            android:enabled="true"
+353-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\b6305b830609fa629d5e56fd1ce956f9\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:31:13-35
+354            android:exported="false" >
+354-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\b6305b830609fa629d5e56fd1ce956f9\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:32:13-37
+355        </receiver>
+356
+357        <service
+357-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\b6305b830609fa629d5e56fd1ce956f9\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:35:9-38:40
+358            android:name="com.google.android.gms.measurement.AppMeasurementService"
+358-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\b6305b830609fa629d5e56fd1ce956f9\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:36:13-84
+359            android:enabled="true"
+359-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\b6305b830609fa629d5e56fd1ce956f9\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:37:13-35
+360            android:exported="false" />
+360-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\b6305b830609fa629d5e56fd1ce956f9\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:38:13-37
+361        <service
+361-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\b6305b830609fa629d5e56fd1ce956f9\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:39:9-43:72
+362            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+362-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\b6305b830609fa629d5e56fd1ce956f9\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:40:13-87
+363            android:enabled="true"
+363-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\b6305b830609fa629d5e56fd1ce956f9\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:41:13-35
+364            android:exported="false"
+364-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\b6305b830609fa629d5e56fd1ce956f9\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:42:13-37
+365            android:permission="android.permission.BIND_JOB_SERVICE" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+365-->[com.google.android.gms:play-services-measurement:17.4.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\b6305b830609fa629d5e56fd1ce956f9\jetified-play-services-measurement-17.4.1\AndroidManifest.xml:43:13-69
+366        <activity
+366-->[com.google.android.gms:play-services-ads-lite:19.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\0597d3723727b802826a7bfbe89969c6\jetified-play-services-ads-lite-19.1.0\AndroidManifest.xml:29:9-33:64
+367            android:name="com.google.android.gms.ads.AdActivity"
+367-->[com.google.android.gms:play-services-ads-lite:19.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\0597d3723727b802826a7bfbe89969c6\jetified-play-services-ads-lite-19.1.0\AndroidManifest.xml:30:13-65
+368            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+368-->[com.google.android.gms:play-services-ads-lite:19.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\0597d3723727b802826a7bfbe89969c6\jetified-play-services-ads-lite-19.1.0\AndroidManifest.xml:31:13-122
+369            android:exported="false"
+369-->[com.google.android.gms:play-services-ads-lite:19.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\0597d3723727b802826a7bfbe89969c6\jetified-play-services-ads-lite-19.1.0\AndroidManifest.xml:32:13-37
+370            android:theme="@android:style/Theme.Translucent" />
+370-->[com.google.android.gms:play-services-ads-lite:19.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\0597d3723727b802826a7bfbe89969c6\jetified-play-services-ads-lite-19.1.0\AndroidManifest.xml:33:13-61
+371
+372        <provider
+372-->[com.google.android.gms:play-services-ads-lite:19.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\0597d3723727b802826a7bfbe89969c6\jetified-play-services-ads-lite-19.1.0\AndroidManifest.xml:35:9-39:39
+373            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
+373-->[com.google.android.gms:play-services-ads-lite:19.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\0597d3723727b802826a7bfbe89969c6\jetified-play-services-ads-lite-19.1.0\AndroidManifest.xml:36:13-76
+374            android:authorities="com.panaceasoft.flutterrestaurant.mobileadsinitprovider"
+374-->[com.google.android.gms:play-services-ads-lite:19.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\0597d3723727b802826a7bfbe89969c6\jetified-play-services-ads-lite-19.1.0\AndroidManifest.xml:37:13-73
+375            android:exported="false"
+375-->[com.google.android.gms:play-services-ads-lite:19.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\0597d3723727b802826a7bfbe89969c6\jetified-play-services-ads-lite-19.1.0\AndroidManifest.xml:38:13-37
+376            android:initOrder="100" />
+376-->[com.google.android.gms:play-services-ads-lite:19.1.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\0597d3723727b802826a7bfbe89969c6\jetified-play-services-ads-lite-19.1.0\AndroidManifest.xml:39:13-36
+377
+378        <meta-data
+378-->[com.google.android.gms:play-services-basement:17.2.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\fcd4fb52af40e2e14ce78a5ec1ce0e52\jetified-play-services-basement-17.2.1\AndroidManifest.xml:23:9-25:69
+379            android:name="com.google.android.gms.version"
+379-->[com.google.android.gms:play-services-basement:17.2.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\fcd4fb52af40e2e14ce78a5ec1ce0e52\jetified-play-services-basement-17.2.1\AndroidManifest.xml:24:13-58
+380            android:value="@integer/google_play_services_version" />
+380-->[com.google.android.gms:play-services-basement:17.2.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\fcd4fb52af40e2e14ce78a5ec1ce0e52\jetified-play-services-basement-17.2.1\AndroidManifest.xml:25:13-66
+381        <!--
+382         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
+383         with the application context. This config is merged in with the host app's manifest,
+384         but there can only be one provider with the same authority activated at any given
+385         point; so if the end user has two or more different apps that use Facebook SDK, only the
+386         first one will be able to use the provider. To work around this problem, we use the
+387         following placeholder in the authority to identify each host application as if it was
+388         a completely different provider.
+389        -->
+390        <provider
+390-->[com.facebook.android:facebook-core:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8dc31174afc703bd9f3b5743427a1609\jetified-facebook-core-5.5.1\AndroidManifest.xml:39:9-42:40
+391            android:name="com.facebook.internal.FacebookInitProvider"
+391-->[com.facebook.android:facebook-core:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8dc31174afc703bd9f3b5743427a1609\jetified-facebook-core-5.5.1\AndroidManifest.xml:40:13-70
+392            android:authorities="com.panaceasoft.flutterrestaurant.FacebookInitProvider"
+392-->[com.facebook.android:facebook-core:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8dc31174afc703bd9f3b5743427a1609\jetified-facebook-core-5.5.1\AndroidManifest.xml:41:13-72
+393            android:exported="false" />
+393-->[com.facebook.android:facebook-core:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8dc31174afc703bd9f3b5743427a1609\jetified-facebook-core-5.5.1\AndroidManifest.xml:42:13-37
+394
+395        <receiver
+395-->[com.facebook.android:facebook-core:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8dc31174afc703bd9f3b5743427a1609\jetified-facebook-core-5.5.1\AndroidManifest.xml:44:9-50:20
+396            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+396-->[com.facebook.android:facebook-core:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8dc31174afc703bd9f3b5743427a1609\jetified-facebook-core-5.5.1\AndroidManifest.xml:45:13-86
+397            android:exported="false" >
+397-->[com.facebook.android:facebook-core:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8dc31174afc703bd9f3b5743427a1609\jetified-facebook-core-5.5.1\AndroidManifest.xml:46:13-37
+398            <intent-filter>
+398-->[com.facebook.android:facebook-core:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8dc31174afc703bd9f3b5743427a1609\jetified-facebook-core-5.5.1\AndroidManifest.xml:47:13-49:29
+399                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+399-->[com.facebook.android:facebook-core:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8dc31174afc703bd9f3b5743427a1609\jetified-facebook-core-5.5.1\AndroidManifest.xml:48:17-95
+399-->[com.facebook.android:facebook-core:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8dc31174afc703bd9f3b5743427a1609\jetified-facebook-core-5.5.1\AndroidManifest.xml:48:25-92
+400            </intent-filter>
+401        </receiver>
+402        <receiver
+402-->[com.facebook.android:facebook-core:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8dc31174afc703bd9f3b5743427a1609\jetified-facebook-core-5.5.1\AndroidManifest.xml:51:9-58:20
+403            android:name="com.facebook.CampaignTrackingReceiver"
+403-->[com.facebook.android:facebook-core:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8dc31174afc703bd9f3b5743427a1609\jetified-facebook-core-5.5.1\AndroidManifest.xml:52:13-65
+404            android:exported="true"
+404-->[com.facebook.android:facebook-core:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8dc31174afc703bd9f3b5743427a1609\jetified-facebook-core-5.5.1\AndroidManifest.xml:53:13-36
+405            android:permission="android.permission.INSTALL_PACKAGES" >
+405-->[com.facebook.android:facebook-core:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8dc31174afc703bd9f3b5743427a1609\jetified-facebook-core-5.5.1\AndroidManifest.xml:54:13-69
+406            <intent-filter>
+406-->[com.facebook.android:facebook-core:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8dc31174afc703bd9f3b5743427a1609\jetified-facebook-core-5.5.1\AndroidManifest.xml:55:13-57:29
+407                <action android:name="com.android.vending.INSTALL_REFERRER" />
+407-->[com.facebook.android:facebook-core:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8dc31174afc703bd9f3b5743427a1609\jetified-facebook-core-5.5.1\AndroidManifest.xml:56:17-79
+407-->[com.facebook.android:facebook-core:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8dc31174afc703bd9f3b5743427a1609\jetified-facebook-core-5.5.1\AndroidManifest.xml:56:25-76
+408            </intent-filter>
+409        </receiver>
+410
+411        <service
+411-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\f081aa236bfa3d2c1086b1742c0edb60\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:29:9-35:19
+412            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+412-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\f081aa236bfa3d2c1086b1742c0edb60\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:30:13-103
+413            android:exported="false" >
+413-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\f081aa236bfa3d2c1086b1742c0edb60\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:31:13-37
+414            <meta-data
+414-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\f081aa236bfa3d2c1086b1742c0edb60\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:32:13-34:39
+415                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+415-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\f081aa236bfa3d2c1086b1742c0edb60\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:33:17-94
+416                android:value="cct" />
+416-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\f081aa236bfa3d2c1086b1742c0edb60\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:34:17-36
+417        </service>
+418        <service
+418-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\3bcdd5e68833680f89e6aa6cce288abe\jetified-transport-runtime-2.2.0\AndroidManifest.xml:26:9-30:19
+419            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+419-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\3bcdd5e68833680f89e6aa6cce288abe\jetified-transport-runtime-2.2.0\AndroidManifest.xml:27:13-117
+420            android:exported="false"
+420-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\3bcdd5e68833680f89e6aa6cce288abe\jetified-transport-runtime-2.2.0\AndroidManifest.xml:28:13-37
+421            android:permission="android.permission.BIND_JOB_SERVICE" >
+421-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\3bcdd5e68833680f89e6aa6cce288abe\jetified-transport-runtime-2.2.0\AndroidManifest.xml:29:13-69
+422        </service>
+423
+424        <receiver
+424-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\3bcdd5e68833680f89e6aa6cce288abe\jetified-transport-runtime-2.2.0\AndroidManifest.xml:32:9-34:40
+425            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+425-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\3bcdd5e68833680f89e6aa6cce288abe\jetified-transport-runtime-2.2.0\AndroidManifest.xml:33:13-132
+426            android:exported="false" />
+426-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\3bcdd5e68833680f89e6aa6cce288abe\jetified-transport-runtime-2.2.0\AndroidManifest.xml:34:13-37
+427
+428        <activity
+428-->[io.card:android-sdk:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8a30dc28eee31a76c6b43a2df6c5dfdc\jetified-android-sdk-5.5.1\AndroidManifest.xml:20:9-22:66
+429            android:name="io.card.payment.CardIOActivity"
+429-->[io.card:android-sdk:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8a30dc28eee31a76c6b43a2df6c5dfdc\jetified-android-sdk-5.5.1\AndroidManifest.xml:21:13-58
+430            android:configChanges="keyboardHidden|orientation" />
+430-->[io.card:android-sdk:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8a30dc28eee31a76c6b43a2df6c5dfdc\jetified-android-sdk-5.5.1\AndroidManifest.xml:22:13-63
+431        <activity android:name="io.card.payment.DataEntryActivity" />
+431-->[io.card:android-sdk:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8a30dc28eee31a76c6b43a2df6c5dfdc\jetified-android-sdk-5.5.1\AndroidManifest.xml:23:9-70
+431-->[io.card:android-sdk:5.5.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\8a30dc28eee31a76c6b43a2df6c5dfdc\jetified-android-sdk-5.5.1\AndroidManifest.xml:23:19-67
+432
+433        <receiver android:name="com.razorpay.RzpTokenReceiver" >
+433-->[com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a8e028b28b7df41e9b6952597f4a278e\jetified-checkout-1.5.16\AndroidManifest.xml:12:9-16:20
+433-->[com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a8e028b28b7df41e9b6952597f4a278e\jetified-checkout-1.5.16\AndroidManifest.xml:12:19-63
+434            <intent-filter>
+434-->[com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a8e028b28b7df41e9b6952597f4a278e\jetified-checkout-1.5.16\AndroidManifest.xml:13:13-15:29
+435                <action android:name="rzp.device_token.share" />
+435-->[com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a8e028b28b7df41e9b6952597f4a278e\jetified-checkout-1.5.16\AndroidManifest.xml:14:17-65
+435-->[com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\a8e028b28b7df41e9b6952597f4a278e\jetified-checkout-1.5.16\AndroidManifest.xml:14:25-62
+436            </intent-filter>
+437        </receiver> <!-- The activities will be merged into the manifest of the hosting app. -->
+438        <activity
+438-->[com.google.android.play:core:1.8.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\936c1398c16bb77c2ed8abe3d8e12a80\jetified-core-1.8.0\AndroidManifest.xml:12:5-271
+439            android:name="com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity"
+439-->[com.google.android.play:core:1.8.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\936c1398c16bb77c2ed8abe3d8e12a80\jetified-core-1.8.0\AndroidManifest.xml:12:15-102
+440            android:enabled="false"
+440-->[com.google.android.play:core:1.8.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\936c1398c16bb77c2ed8abe3d8e12a80\jetified-core-1.8.0\AndroidManifest.xml:12:103-126
+441            android:exported="false"
+441-->[com.google.android.play:core:1.8.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\936c1398c16bb77c2ed8abe3d8e12a80\jetified-core-1.8.0\AndroidManifest.xml:12:127-151
+442            android:launchMode="singleInstance"
+442-->[com.google.android.play:core:1.8.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\936c1398c16bb77c2ed8abe3d8e12a80\jetified-core-1.8.0\AndroidManifest.xml:12:204-239
+443            android:process=":playcore_missing_splits_activity"
+443-->[com.google.android.play:core:1.8.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\936c1398c16bb77c2ed8abe3d8e12a80\jetified-core-1.8.0\AndroidManifest.xml:12:152-203
+444            android:stateNotNeeded="true" />
+444-->[com.google.android.play:core:1.8.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\936c1398c16bb77c2ed8abe3d8e12a80\jetified-core-1.8.0\AndroidManifest.xml:12:240-269
+445        <activity
+445-->[com.google.android.play:core:1.8.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\936c1398c16bb77c2ed8abe3d8e12a80\jetified-core-1.8.0\AndroidManifest.xml:13:5-226
+446            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+446-->[com.google.android.play:core:1.8.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\936c1398c16bb77c2ed8abe3d8e12a80\jetified-core-1.8.0\AndroidManifest.xml:13:15-95
+447            android:enabled="false"
+447-->[com.google.android.play:core:1.8.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\936c1398c16bb77c2ed8abe3d8e12a80\jetified-core-1.8.0\AndroidManifest.xml:13:96-119
+448            android:exported="false"
+448-->[com.google.android.play:core:1.8.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\936c1398c16bb77c2ed8abe3d8e12a80\jetified-core-1.8.0\AndroidManifest.xml:13:120-144
+449            android:stateNotNeeded="true"
+449-->[com.google.android.play:core:1.8.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\936c1398c16bb77c2ed8abe3d8e12a80\jetified-core-1.8.0\AndroidManifest.xml:13:145-174
+450            android:theme="@style/Theme.PlayCore.Transparent" /> <!-- The service will be merged into the manifest of the hosting app. -->
+450-->[com.google.android.play:core:1.8.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\936c1398c16bb77c2ed8abe3d8e12a80\jetified-core-1.8.0\AndroidManifest.xml:13:175-224
+451        <service
+451-->[com.google.android.play:core:1.8.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\936c1398c16bb77c2ed8abe3d8e12a80\jetified-core-1.8.0\AndroidManifest.xml:16:5-145
+452            android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService"
+452-->[com.google.android.play:core:1.8.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\936c1398c16bb77c2ed8abe3d8e12a80\jetified-core-1.8.0\AndroidManifest.xml:16:14-95
+453            android:enabled="false"
+453-->[com.google.android.play:core:1.8.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\936c1398c16bb77c2ed8abe3d8e12a80\jetified-core-1.8.0\AndroidManifest.xml:16:96-119
+454            android:exported="true" />
+454-->[com.google.android.play:core:1.8.0] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\936c1398c16bb77c2ed8abe3d8e12a80\jetified-core-1.8.0\AndroidManifest.xml:16:120-143
+455
+456        <activity
+456-->[com.braintreepayments.api:google-payment:3.1.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\58fbdc22d94325e9d5a3631ff2a506b1\jetified-google-payment-3.1.1\AndroidManifest.xml:12:9-14:62
+457            android:name="com.braintreepayments.api.GooglePaymentActivity"
+457-->[com.braintreepayments.api:google-payment:3.1.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\58fbdc22d94325e9d5a3631ff2a506b1\jetified-google-payment-3.1.1\AndroidManifest.xml:13:13-75
+458            android:theme="@style/bt_transparent_activity" />
+458-->[com.braintreepayments.api:google-payment:3.1.1] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\58fbdc22d94325e9d5a3631ff2a506b1\jetified-google-payment-3.1.1\AndroidManifest.xml:14:13-59
+459        <activity
+459-->[org.jfrog.cardinalcommerce.gradle:cardinalmobilesdk:2.2.1-2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6cdce58bd30a896ccb4258c44ed83c03\jetified-cardinalmobilesdk-2.2.1-2\AndroidManifest.xml:17:9-19:65
+460            android:name="com.cardinalcommerce.shared.cs.userinterfaces.ChallengeHTMLView"
+460-->[org.jfrog.cardinalcommerce.gradle:cardinalmobilesdk:2.2.1-2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6cdce58bd30a896ccb4258c44ed83c03\jetified-cardinalmobilesdk-2.2.1-2\AndroidManifest.xml:18:13-91
+461            android:theme="@style/CardinalSDKTheme.ActionBar" />
+461-->[org.jfrog.cardinalcommerce.gradle:cardinalmobilesdk:2.2.1-2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6cdce58bd30a896ccb4258c44ed83c03\jetified-cardinalmobilesdk-2.2.1-2\AndroidManifest.xml:19:13-62
+462        <activity
+462-->[org.jfrog.cardinalcommerce.gradle:cardinalmobilesdk:2.2.1-2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6cdce58bd30a896ccb4258c44ed83c03\jetified-cardinalmobilesdk-2.2.1-2\AndroidManifest.xml:20:9-23:76
+463            android:name="com.cardinalcommerce.shared.cs.userinterfaces.ChallengeNativeView"
+463-->[org.jfrog.cardinalcommerce.gradle:cardinalmobilesdk:2.2.1-2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6cdce58bd30a896ccb4258c44ed83c03\jetified-cardinalmobilesdk-2.2.1-2\AndroidManifest.xml:21:13-93
+464            android:theme="@style/CardinalSDKTheme.ActionBar"
+464-->[org.jfrog.cardinalcommerce.gradle:cardinalmobilesdk:2.2.1-2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6cdce58bd30a896ccb4258c44ed83c03\jetified-cardinalmobilesdk-2.2.1-2\AndroidManifest.xml:22:13-62
+465            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+465-->[org.jfrog.cardinalcommerce.gradle:cardinalmobilesdk:2.2.1-2] C:\Users\dell\.gradle\caches\transforms-2\files-2.1\6cdce58bd30a896ccb4258c44ed83c03\jetified-cardinalmobilesdk-2.2.1-2\AndroidManifest.xml:23:13-73
+466    </application>
+467
+468</manifest>
