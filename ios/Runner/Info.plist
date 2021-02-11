@@ -24,10 +24,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.panaceasoft.flutterrestaurant.braintree</string>
+			<string>io.app.bobaPubRes.braintree</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.panaceasoft.flutterrestaurant.braintree</string>
+				<string>io.app.bobaPubRes.braintree</string>
 			</array>
 		</dict>
 		<dict>

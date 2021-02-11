@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:376000000000:android:bd90000000000000000000",
         "android_client_info": {
-          "package_name": "com.panaceasoft.flutterrestaurant"
+          "package_name": "io.app.bobaPubRes"
         }
       },
       "oauth_client": [
