@@ -17,20 +17,20 @@ class PsConfig {
   /// API Key
   /// If you change here, you need to update in server.
   ///
-  static const String ps_api_key = 'teampsisthebest';
+  static const String ps_api_key = 'bobapub8980';
 
   ///
   /// API URL
   /// Change your backend url
   ///
   static const String ps_app_url =
-      'https://www.panacea-soft.com/flutter-restaurant-admin/index.php/';
+      'http://www.bstwebdemo.co.in/client/development/bobapub/index.php/';
 
   static const String ps_app_image_url =
-      'https://www.panacea-soft.com/flutter-restaurant-admin/uploads/';
+      'http://www.bstwebdemo.co.in/client/development/bobapub/uploads/';
 
   static const String ps_app_image_thumbs_url =
-      'https://www.panacea-soft.com/flutter-restaurant-admin/uploads/thumbnail/';
+      'http://www.bstwebdemo.co.in/client/development/bobapub/uploads/thumbnail/';
 
   ///
   /// Facebook Key
