@@ -148,12 +148,12 @@ class _HomeTabbarProductListViewState extends State<HomeTabbarProductListView>
         : widget.valueHolder.phone == ''
             ? <IconData>[
                 Feather.shopping_bag,
-                Icons.note_add,
+                // Icons.note_add,
               ]
             : <IconData>[
                 // MaterialCommunityIcons.facebook_messenger,
                 Feather.shopping_bag,
-                Icons.note_add,
+                // Icons.note_add,
               ];
     iconsLabel = widget.valueHolder.phone == ''
         ? <String>[]
@@ -161,9 +161,8 @@ class _HomeTabbarProductListViewState extends State<HomeTabbarProductListView>
             ? <String>[]
             : <String>[
                 Utils.getString(context, 'reservation_shop_info'),
-                Utils.getString(
-                    context, 'home__menu_drawer_create_reservation'),
-                Utils.getString(context, 'home__menu_drawer_create_reservation')
+                // Utils.getString(context, 'home__menu_drawer_create_reservation'),
+                // Utils.getString(context, 'home__menu_drawer_create_reservation')
               ];
     final List<int> fixedList =
         Iterable<int>.generate(widget.categoryList.length).toList();

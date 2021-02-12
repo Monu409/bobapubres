@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.panaceasoft.flutterrestaurant"
+    package="io.app.bobaPubRes"
     android:versionCode="8"
     android:versionName="1.7.0" >
 
@@ -45,7 +45,7 @@
     android:name=".Application"
     -->
     <application
-        android:name="com.panaceasoft.flutterrestaurant.Application"
+        android:name="io.app.bobaPubRes.Application"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
@@ -55,7 +55,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name="com.panaceasoft.flutterrestaurant.MainActivity"
+            android:name="io.app.bobaPubRes.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"
@@ -92,7 +92,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="com.panaceasoft.flutterrestaurant.braintree" />
+                <data android:scheme="io.app.bobaPubRes.braintree" />
             </intent-filter>
         </activity>
 
@@ -210,7 +210,7 @@
 
         <provider
             android:name="io.flutter.plugins.share.ShareFileProvider"
-            android:authorities="com.panaceasoft.flutterrestaurant.flutter.share_provider"
+            android:authorities="io.app.bobaPubRes.flutter.share_provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -228,7 +228,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.panaceasoft.flutterrestaurant.fileprovider"
+            android:authorities="io.app.bobaPubRes.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -303,7 +303,7 @@
 
         <provider
             android:name="com.sangcomz.fishbun.FishBunFileProvider"
-            android:authorities="com.panaceasoft.flutterrestaurant.fishbunfileprovider"
+            android:authorities="io.app.bobaPubRes.fishbunfileprovider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -344,7 +344,7 @@
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.panaceasoft.flutterrestaurant.firebaseinitprovider"
+            android:authorities="io.app.bobaPubRes.firebaseinitprovider"
             android:exported="false"
             android:initOrder="100" />
 
@@ -371,7 +371,7 @@
 
         <provider
             android:name="com.google.android.gms.ads.MobileAdsInitProvider"
-            android:authorities="com.panaceasoft.flutterrestaurant.mobileadsinitprovider"
+            android:authorities="io.app.bobaPubRes.mobileadsinitprovider"
             android:exported="false"
             android:initOrder="100" />
 
@@ -389,7 +389,7 @@
         -->
         <provider
             android:name="com.facebook.internal.FacebookInitProvider"
-            android:authorities="com.panaceasoft.flutterrestaurant.FacebookInitProvider"
+            android:authorities="io.app.bobaPubRes.FacebookInitProvider"
             android:exported="false" />
 
         <receiver

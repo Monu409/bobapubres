@@ -1,4 +1,4 @@
-com.panaceasoft.flutterrestaurant
+io.app.bobaPubRes
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -3203,7 +3203,6 @@ string fab_transformation_sheet_behavior
 string facebook_app_id
 string fb_login_protocol_scheme
 string fcm_fallback_notification_channel_label
-string firebase_database_url
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id

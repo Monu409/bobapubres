@@ -1,5 +1,5 @@
 {
-    "app_name": "Flutter Restaurant",
+    "app_name": "BobaPub",
     "force_update__update": "AKTUALISIEREN",
     "language_setting__title": "Spracheinstellungen",
     "user_status__deleted": "Ihr Konto wird von Admin gelöscht",
@@ -165,7 +165,7 @@
     "app_info__cancel_button_name": "STORNIEREN",
     "app_info__update_button_name": "AKTUALISIEREN",
     "app_info__submit_button_name": "EINREICHEN",
-    "app_info__splash_name": "www.panaceasoft.com",
+    "app_info__splash_name": "",
     "basket_list_container__app_bar_name": "Basket-Liste",
     "basket_list__title": "Basket-Liste",
     "basket_list__empty_cart_title": "Einkaufswagen ist leer",

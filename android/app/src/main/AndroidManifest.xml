@@ -18,9 +18,9 @@
     android:name="io.flutter.app.FlutterApplication"
     android:name=".Application" -->
     <application
-        android:name=".Application" 
+        android:name=".Application"
         tools:replace="android:label"
-        android:label="Flutter Restaurant"
+        android:label="BobaPub"
         android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher">
         <activity

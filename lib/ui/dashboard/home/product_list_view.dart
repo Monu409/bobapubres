@@ -96,10 +96,10 @@ class _ProductListViewState extends State<ProductListView>
               repo: repo1, limit: PsConfig.LATEST_PRODUCT_LOADING_LIMIT);
           if(widget.isFeaturedItem){
             provider.productParameterHolder =
-              ProductParameterHolder().getFeaturedParameterHolder();
+                ProductParameterHolder().getFeaturedParameterHolder();
           }else{
             provider.productParameterHolder =
-              ProductParameterHolder().getLatestParameterHolder();
+                ProductParameterHolder().getLatestParameterHolder();
           }
 
           if (widget.catId == PsConst.mainMenu) {
@@ -112,8 +112,7 @@ class _ProductListViewState extends State<ProductListView>
 
           // if ((cache != null && cache != widget.catId) || widget.isFirstTime) {
           if (widget.flag) {
-            provider
-                .loadProductListByKeyFromDB(provider.productParameterHolder);
+            provider.loadProductListByKeyFromDB(provider.productParameterHolder);
             print('CALL FROM DB');
           } else {
             provider.loadProductListByKey(provider.productParameterHolder);
@@ -140,8 +139,8 @@ class _ProductListViewState extends State<ProductListView>
                       Container(
                           color: PsColors.coreBackgroundColor,
                           margin: const EdgeInsets.only(
-                              left: PsDimens.space8,
-                              right: PsDimens.space8,
+                            // left: PsDimens.space8,
+                            // right: PsDimens.space8,
                               top: PsDimens.space4,
                               bottom: PsDimens.space4),
                           child: RefreshIndicator(
@@ -150,63 +149,40 @@ class _ProductListViewState extends State<ProductListView>
                                 scrollDirection: Axis.vertical,
                                 shrinkWrap: true,
                                 slivers: <Widget>[
-                                  SliverGrid(
-                                    gridDelegate:
-                                        const SliverGridDelegateWithMaxCrossAxisExtent(
-                                            maxCrossAxisExtent: 220,
-                                            childAspectRatio: 0.6),
+                                  SliverList(
                                     delegate: SliverChildBuilderDelegate(
-                                      (BuildContext context, int index) {
-                                        if (provider.productList.data != null ||
-                                            provider
-                                                .productList.data.isNotEmpty) {
-                                          // final int count =
-                                          //     provider.productList.data.length;
+                                          (BuildContext context, int index) {
+                                        if (provider.productList.data != null || provider.productList.data.isNotEmpty) {
                                           return ProductVeticalListItemForHome(
                                             coreTagKey:
-                                                provider.hashCode.toString() +
-                                                    provider.productList
-                                                        .data[index].id,
-                                            // animationController:
-                                            //     widget.animationController,
-                                            // animation: Tween<double>(
-                                            //         begin: 0.0, end: 1.0)
-                                            //     .animate(
-                                            //   CurvedAnimation(
-                                            //     parent:
-                                            //         widget.animationController,
-                                            //     curve: Interval(
-                                            //         (1 / count) * index, 1.0,
-                                            //         curve:
-                                            //             Curves.fastOutSlowIn),
-                                            //   ),
-                                            // ),
-                                            product: provider
-                                                .productList.data[index],
+                                            provider.hashCode.toString() +
+                                                provider.productList
+                                                    .data[index].id,
+                                            product: provider.productList.data[index],
                                             onTap: () {
                                               final Product product = provider
                                                   .productList.data[index];
                                               final ProductDetailIntentHolder
-                                                  holder =
-                                                  ProductDetailIntentHolder(
+                                              holder =
+                                              ProductDetailIntentHolder(
                                                 productId: product.id,
                                                 heroTagImage: provider.hashCode
-                                                        .toString() +
+                                                    .toString() +
                                                     product.id +
                                                     PsConst.HERO_TAG__IMAGE,
                                                 heroTagTitle: provider.hashCode
-                                                        .toString() +
+                                                    .toString() +
                                                     product.id +
                                                     PsConst.HERO_TAG__TITLE,
                                                 heroTagOriginalPrice: provider
-                                                        .hashCode
-                                                        .toString() +
+                                                    .hashCode
+                                                    .toString() +
                                                     product.id +
                                                     PsConst
                                                         .HERO_TAG__ORIGINAL_PRICE,
                                                 heroTagUnitPrice: provider
-                                                        .hashCode
-                                                        .toString() +
+                                                    .hashCode
+                                                    .toString() +
                                                     product.id +
                                                     PsConst
                                                         .HERO_TAG__UNIT_PRICE,
@@ -221,8 +197,7 @@ class _ProductListViewState extends State<ProductListView>
                                           return null;
                                         }
                                       },
-                                      childCount:
-                                          provider.productList.data.length,
+                                      childCount: provider.productList.data.length,
                                     ),
                                   ),
                                 ]),
@@ -233,7 +208,7 @@ class _ProductListViewState extends State<ProductListView>
                             },
                           ))
                     else if (provider.productList.status !=
-                            PsStatus.PROGRESS_LOADING &&
+                        PsStatus.PROGRESS_LOADING &&
                         provider.productList.status != PsStatus.BLOCK_LOADING &&
                         provider.productList.status != PsStatus.NOACTION)
                       Align(
@@ -322,7 +297,7 @@ class _BottomNavigationImageAndTextState
           ],
           color: PsColors.backgroundColor,
           borderRadius:
-              const BorderRadius.all(Radius.circular(PsDimens.space8))),
+          const BorderRadius.all(Radius.circular(PsDimens.space8))),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
@@ -355,9 +330,9 @@ class _BottomNavigationImageAndTextState
 
               if (result != null) {
                 widget.searchProductProvider.productParameterHolder.catId =
-                    result[PsConst.CATEGORY_ID];
+                result[PsConst.CATEGORY_ID];
                 widget.searchProductProvider.productParameterHolder.subCatId =
-                    result[PsConst.SUB_CATEGORY_ID];
+                result[PsConst.SUB_CATEGORY_ID];
                 widget.searchProductProvider.resetLatestProductList(
                     widget.searchProductProvider.productParameterHolder);
 
@@ -391,7 +366,7 @@ class _BottomNavigationImageAndTextState
               final dynamic result = await Navigator.pushNamed(
                   context, RoutePaths.itemSearch,
                   arguments:
-                      widget.searchProductProvider.productParameterHolder);
+                  widget.searchProductProvider.productParameterHolder);
               if (result != null) {
                 widget.searchProductProvider.productParameterHolder = result;
                 widget.searchProductProvider.resetLatestProductList(
@@ -425,7 +400,7 @@ class _BottomNavigationImageAndTextState
               final dynamic result = await Navigator.pushNamed(
                   context, RoutePaths.itemSort,
                   arguments:
-                      widget.searchProductProvider.productParameterHolder);
+                  widget.searchProductProvider.productParameterHolder);
               if (result != null) {
                 widget.searchProductProvider.productParameterHolder = result;
                 widget.searchProductProvider.resetLatestProductList(

@@ -409,15 +409,15 @@ class _HomeViewState extends State<DashboardView>
                         Navigator.pop(context);
                         updateSelectedIndexWithAnimation(title, index);
                       }),
-                  _DrawerMenuWidget(
-                      icon: Icons.folder_open,
-                      title: Utils.getString(
-                          context, 'home__menu_drawer_collection'),
-                      index: PsConst.REQUEST_CODE__MENU_COLLECTION_FRAGMENT,
-                      onTap: (String title, int index) {
-                        Navigator.pop(context);
-                        updateSelectedIndexWithAnimation(title, index);
-                      }),
+                  // _DrawerMenuWidget(
+                  //     icon: Icons.folder_open,
+                  //     title: Utils.getString(
+                  //         context, 'home__menu_drawer_collection'),
+                  //     index: PsConst.REQUEST_CODE__MENU_COLLECTION_FRAGMENT,
+                  //     onTap: (String title, int index) {
+                  //       Navigator.pop(context);
+                  //       updateSelectedIndexWithAnimation(title, index);
+                  //     }),
                   const Divider(
                     height: PsDimens.space1,
                   ),
@@ -491,38 +491,38 @@ class _HomeViewState extends State<DashboardView>
                               updateSelectedIndexWithAnimation(title, index);
                             }),
                       ),
-                  if (provider != null)
-                    if (provider.psValueHolder.loginUserId != null &&
-                        provider.psValueHolder.loginUserId != '')
-                      Visibility(
-                        visible: true,
-                        child: _DrawerMenuWidget(
-                            icon: Icons.note_add,
-                            title: Utils.getString(context,
-                                'home__menu_drawer_create_reservation'),
-                            index: PsConst
-                                .REQUEST_CODE__MENU_USER_CREATE_RESERVATION_FRAGMENT,
-                            onTap: (String title, int index) {
-                              Navigator.pop(context);
-                              updateSelectedIndexWithAnimation(title, index);
-                            }),
-                      ),
-                  if (provider != null)
-                    if (provider.psValueHolder.loginUserId != null &&
-                        provider.psValueHolder.loginUserId != '')
-                      Visibility(
-                        visible: true,
-                        child: _DrawerMenuWidget(
-                            icon: FontAwesome.book,
-                            title: Utils.getString(
-                                context, 'home__menu_drawer_reservation_list'),
-                            index: PsConst
-                                .REQUEST_CODE__MENU_USER_RESERVATION_LIST_FRAGMENT,
-                            onTap: (String title, int index) {
-                              Navigator.pop(context);
-                              updateSelectedIndexWithAnimation(title, index);
-                            }),
-                      ),
+                  // if (provider != null)
+                  //   if (provider.psValueHolder.loginUserId != null &&
+                  //       provider.psValueHolder.loginUserId != '')
+                  //     Visibility(
+                  //       visible: true,
+                  //       child: _DrawerMenuWidget(
+                  //           icon: Icons.note_add,
+                  //           title: Utils.getString(context,
+                  //               'home__menu_drawer_create_reservation'),
+                  //           index: PsConst
+                  //               .REQUEST_CODE__MENU_USER_CREATE_RESERVATION_FRAGMENT,
+                  //           onTap: (String title, int index) {
+                  //             Navigator.pop(context);
+                  //             updateSelectedIndexWithAnimation(title, index);
+                  //           }),
+                  //     ),
+                  // if (provider != null)
+                  //   if (provider.psValueHolder.loginUserId != null &&
+                  //       provider.psValueHolder.loginUserId != '')
+                  //     Visibility(
+                  //       visible: true,
+                  //       child: _DrawerMenuWidget(
+                  //           icon: FontAwesome.book,
+                  //           title: Utils.getString(
+                  //               context, 'home__menu_drawer_reservation_list'),
+                  //           index: PsConst
+                  //               .REQUEST_CODE__MENU_USER_RESERVATION_LIST_FRAGMENT,
+                  //           onTap: (String title, int index) {
+                  //             Navigator.pop(context);
+                  //             updateSelectedIndexWithAnimation(title, index);
+                  //           }),
+                  //     ),
                   if (provider != null)
                     if (provider.psValueHolder.loginUserId != null &&
                         provider.psValueHolder.loginUserId != '')
@@ -573,15 +573,15 @@ class _HomeViewState extends State<DashboardView>
                     title:
                         Text(Utils.getString(context, 'home__menu_drawer_app')),
                   ),
-                  _DrawerMenuWidget(
-                      icon: Icons.g_translate,
-                      title: Utils.getString(
-                          context, 'home__menu_drawer_language'),
-                      index: PsConst.REQUEST_CODE__MENU_LANGUAGE_FRAGMENT,
-                      onTap: (String title, int index) {
-                        Navigator.pop(context);
-                        updateSelectedIndexWithAnimation('', index);
-                      }),
+                  // _DrawerMenuWidget(
+                  //     icon: Icons.g_translate,
+                  //     title: Utils.getString(
+                  //         context, 'home__menu_drawer_language'),
+                  //     index: PsConst.REQUEST_CODE__MENU_LANGUAGE_FRAGMENT,
+                  //     onTap: (String title, int index) {
+                  //       Navigator.pop(context);
+                  //       updateSelectedIndexWithAnimation('', index);
+                  //     }),
                   _DrawerMenuWidget(
                       icon: Icons.contacts,
                       title: Utils.getString(
@@ -663,18 +663,18 @@ class _HomeViewState extends State<DashboardView>
                 );
               },
             ),
-            IconButton(
-              icon: Icon(
-                Feather.book_open,
-                color: Theme.of(context).iconTheme.color,
-              ),
-              onPressed: () {
-                Navigator.pushNamed(
-                  context,
-                  RoutePaths.blogList,
-                );
-              },
-            ),
+            // IconButton(
+            //   icon: Icon(
+            //     Feather.book_open,
+            //     color: Theme.of(context).iconTheme.color,
+            //   ),
+            //   onPressed: () {
+            //     Navigator.pushNamed(
+            //       context,
+            //       RoutePaths.blogList,
+            //     );
+            //   },
+            // ),
             // ChangeNotifierProvider<BasketProvider>(
             // lazy: false,
             // create: (BuildContext context) {

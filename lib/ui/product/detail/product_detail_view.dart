@@ -526,9 +526,9 @@ class _ProductDetailState extends State<ProductDetailView>
                                 DetailInfoTileView(
                                   productDetail: provider,
                                 ),
-                                UserCommentTileView(
-                                  productDetail: provider,
-                                ),
+                                // UserCommentTileView(
+                                //   productDetail: provider,
+                                // ),
                                 TermsAndPolicyTileView(),
                                 // RelatedProductsTileView(
                                 //   productDetail: provider,

@@ -1,5 +1,5 @@
 {
-  "app_name": "Flutter Restaurant",
+  "app_name": "BobaPub",
   "dashboard__main_menu": "Main Menu",
   "dashboard__special_collection": "Special Offers",
   "dashboard__featured_items": "Featured Items",
@@ -165,7 +165,7 @@
   "app_info__cancel_button_name": "CANCEL",
   "app_info__update_button_name": "UPDATE",
   "app_info__submit_button_name": "SUBMIT",
-  "app_info__splash_name": "www.panaceasoft.com",
+  "app_info__splash_name": "",
   "basket_list_container__app_bar_name": "Basket List",
   "basket_list__title": "Basket List",
   "basket_list__empty_cart_title": "Cart is Empty",

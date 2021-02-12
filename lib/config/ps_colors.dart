@@ -81,9 +81,9 @@ class PsColors {
   ///
   /// Common Theme
   ///
-  static const Color _c_main_color = Color(0xFFFFBC00);
+  static const Color _c_main_color = Color(0xFFe8191f);
   static const Color _c_main_light_color = Color(0xFFFFF3D3);
-  static const Color _c_main_dark_color = Color(0xFFDDA200);
+  static const Color _c_main_dark_color = Color(0xFFe8191f);
 
   static const Color _c_white_color = Colors.white;
   static const Color _c_black_color = Colors.black;

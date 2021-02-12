@@ -11,7 +11,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>flutterrestaurant</string>
+	<string>Boba Pub</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -54,7 +54,7 @@
 	<key>FacebookAppID</key>
 	<string>000000000000000</string>
 	<key>FacebookDisplayName</key>
-	<string>Flutter Restaurant</string>
+	<string>BobaPub</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-0000000000000000~0000000000</string>
 	<key>LSApplicationQueriesSchemes</key>
