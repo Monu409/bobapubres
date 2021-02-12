@@ -138,6 +138,7 @@ dev_dependencies:
   rate_my_app: 0.7.2
   share: 0.6.5+4
   firebase_dynamic_links: 0.5.0+11
+  flutter_launcher_icons: ^0.8.1
   #flutter_local_notifications:
   #  path: lib/utils/local_noti/
 
@@ -146,6 +147,12 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
+
+flutter_icons:
+  image_path: "assets/images/app_icon.png"
+  android: true
+  ios: true
+
 flutter:
 
   # The following line ensures that the Material Icons font is
@@ -192,13 +199,6 @@ flutter:
    - assets/images/trending.png
    - assets/images/user_default_photo.png
 
-   
-
-
-
-   
-   
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
@@ -217,9 +217,6 @@ flutter:
         - asset: assets/fonts/Product-Sans-Bold-Italic.ttf
         - asset: assets/fonts/Product-Sans-Bold.ttf
         - asset: assets/fonts/Product-Sans-Italic.ttf
-
-
-
   # fonts:
   #   - family: Schyler
   #     fonts:

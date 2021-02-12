@@ -16,6 +16,13 @@
             </list>
           </value>
         </entry>
+        <entry key="archive">
+          <value>
+            <list>
+              <option value="C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/archive-2.0.13/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="args">
           <value>
             <list>
@@ -331,6 +338,13 @@
             </list>
           </value>
         </entry>
+        <entry key="flutter_launcher_icons">
+          <value>
+            <list>
+              <option value="C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.8.1/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter_layout_grid">
           <value>
             <list>
@@ -496,6 +510,13 @@
           <value>
             <list>
               <option value="C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.4/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="image">
+          <value>
+            <list>
+              <option value="C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/image-2.1.19/lib" />
             </list>
           </value>
         </entry>
@@ -1087,11 +1108,19 @@
             </list>
           </value>
         </entry>
+        <entry key="yaml">
+          <value>
+            <list>
+              <option value="C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/yaml-2.2.1/lib" />
+            </list>
+          </value>
+        </entry>
       </option>
     </properties>
     <CLASSES>
       <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/ansicolor-1.1.1/lib" />
       <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/apple_sign_in-0.1.0/lib" />
+      <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/archive-2.0.13/lib" />
       <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/args-1.6.0/lib" />
       <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.5.0-nullsafety.1/lib" />
       <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0-nullsafety.1/lib" />
@@ -1136,6 +1165,7 @@
       <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_icons-1.1.0/lib" />
       <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_image-3.0.0/lib" />
       <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_image_compress-0.7.0/lib" />
+      <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.8.1/lib" />
       <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_layout_grid-0.10.2/lib" />
       <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_map-0.10.1+1/lib" />
       <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_native_admob-2.1.0+3/lib" />
@@ -1157,6 +1187,7 @@
       <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/html-0.14.0+4/lib" />
       <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.12.2/lib" />
       <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.4/lib" />
+      <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/image-2.1.19/lib" />
       <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.16.1/lib" />
       <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.3-nullsafety.1/lib" />
       <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/latlong-0.6.1/lib" />
@@ -1240,6 +1271,7 @@
       <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/wkt_parser-1.0.7/lib" />
       <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/xdg_directories-0.1.2/lib" />
       <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/xml-4.5.1/lib" />
+      <root url="file://C:/flutter2/flutter/.pub-cache/hosted/pub.dartlang.org/yaml-2.2.1/lib" />
       <root url="file://C:/flutter2/flutter/bin/cache/pkg/sky_engine/lib" />
       <root url="file://C:/flutter2/flutter/packages/flutter/lib" />
       <root url="file://C:/flutter2/flutter/packages/flutter_localizations/lib" />
