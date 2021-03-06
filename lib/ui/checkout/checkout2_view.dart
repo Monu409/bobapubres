@@ -14,12 +14,14 @@ import 'package:flutterrestaurant/ui/common/dialog/error_dialog.dart';
 import 'package:flutterrestaurant/ui/common/dialog/success_dialog.dart';
 import 'package:flutterrestaurant/ui/common/dialog/warning_dialog_view.dart';
 import 'package:flutterrestaurant/ui/common/ps_textfield_widget.dart';
+import 'package:flutterrestaurant/ui/common/ps_toast.dart';
 import 'package:flutterrestaurant/utils/utils.dart';
 import 'package:flutterrestaurant/viewobject/basket.dart';
 import 'package:flutterrestaurant/viewobject/common/ps_value_holder.dart';
 import 'package:flutterrestaurant/viewobject/coupon_discount.dart';
 import 'package:flutterrestaurant/viewobject/holder/coupon_discount_holder.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Checkout2View extends StatefulWidget {
   const Checkout2View({
@@ -36,6 +38,7 @@ class Checkout2View extends StatefulWidget {
 
 class _Checkout2ViewState extends State<Checkout2View> {
   final TextEditingController couponController = TextEditingController();
+  final TextEditingController pointsController = TextEditingController();
   CouponDiscountRepository couponDiscountRepo;
   TransactionHeaderRepository transactionHeaderRepo;
   BasketRepository basketRepository;
@@ -155,6 +158,7 @@ class _Checkout2ViewState extends State<Checkout2View> {
                                     Provider.of<BasketProvider>(context,
                                         listen: false);
 
+
                                 basketProvider.checkoutCalculationHelper
                                     .calculate(
                                         basketList: widget.basketList,
@@ -196,6 +200,74 @@ class _Checkout2ViewState extends State<Checkout2View> {
                                       message: Utils.getString(context,
                                           'checkout__warning_dialog_message'),
                                       onPressed: () {},
+                                    );
+                                  });
+                            }
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: PsDimens.space16,
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Expanded(
+                          child: PsTextFieldWidget(
+                            hintText: 'Enter Points',
+                            textEditingController: pointsController,
+                            showTitle: false,
+                          )),
+                      Container(
+                        margin: const EdgeInsets.only(right: PsDimens.space8),
+                        child: RaisedButton(
+                          color: PsColors.mainColor,
+                          shape: const BeveledRectangleBorder(
+                            borderRadius:
+                            BorderRadius.all(Radius.circular(7.0)),
+                          ),
+                          child: Row(
+                            children: <Widget>[
+                              Icon(MaterialCommunityIcons.ticket_percent,
+                                  color: PsColors.white),
+                              const SizedBox(
+                                width: PsDimens.space4,
+                              ),
+                              Text(
+                                'Redeem',
+                                textAlign: TextAlign.start,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .button
+                                    .copyWith(color: PsColors.white),
+                              ),
+                            ],
+                          ),
+                          onPressed: () async {
+                            FocusScope.of(context).unfocus();
+                            final UserProvider userProvider = Provider.of<UserProvider>(context,
+                                listen: false);
+                            SharedPreferences prefs = await SharedPreferences.getInstance();
+                            if(int.parse(userProvider.holderUser.rewards)>int.parse(pointsController.text)) {
+                              prefs.setString('points_pref', pointsController.text);
+                              PsToast().showToast('Processing for redeem...');
+                              showDialog<dynamic>(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return SuccessDialog(
+                                      message: 'We are in process for redeem',
+                                    );
+                                  });
+                            }
+                            else{
+                              showDialog<dynamic>(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return ErrorDialog(
+                                      message: 'Balance points is '+userProvider.holderUser.rewards,
                                     );
                                   });
                             }
@@ -249,6 +321,12 @@ class _OrderSummaryWidget extends StatelessWidget {
   final PsValueHolder psValueHolder;
   final BasketProvider basketProvider;
   final UserProvider userProvider;
+
+  Future<String> usedPoints()async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getString('points_pref');
+  }
+
   @override
   Widget build(BuildContext context) {
     String currencySymbol;
@@ -344,11 +422,27 @@ class _OrderSummaryWidget extends StatelessWidget {
             ),
             _spacingWidget,
             _dividerWidget,
+            FutureBuilder(
+              future: usedPoints(),
+              builder: (context, snapshot){
+                if(snapshot.data == null){
+                  return Container();
+                }
+                else {
+                  return _OrderSummeryTextWidget(
+                    transationInfoText:
+                    snapshot.data,
+                    title:
+                    'Used Rewards Point :',
+                  );
+                }
+              },
+            ),
             _OrderSummeryTextWidget(
               transationInfoText:
-                  '$currencySymbol ${basketProvider.checkoutCalculationHelper.totalPriceFormattedString}',
+              '$currencySymbol ${basketProvider.checkoutCalculationHelper.totalPriceFormattedString}',
               title:
-                  '${Utils.getString(context, 'transaction_detail__total')} :',
+              '${Utils.getString(context, 'transaction_detail__total')} :',
             ),
             _spacingWidget,
           ],

@@ -25,6 +25,7 @@ import 'package:flutter_credit_card/credit_card_model.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:provider/provider.dart';
 import 'package:stripe_payment/stripe_payment.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class CreditCardView extends StatefulWidget {
   const CreditCardView(
@@ -36,6 +37,7 @@ class CreditCardView extends StatefulWidget {
       @required this.userLoginProvider,
       @required this.basketProvider,
       @required this.memoText,
+      @required this.pointsSt,
       @required this.publishKey,
       @required this.isClickPickUpButton,
       @required this.deliveryPickUpDate,
@@ -49,6 +51,7 @@ class CreditCardView extends StatefulWidget {
   final UserProvider userLoginProvider;
   final BasketProvider basketProvider;
   final String memoText;
+  final String pointsSt;
   final String publishKey;
   final bool isClickPickUpButton;
   final String deliveryPickUpDate;
@@ -60,6 +63,8 @@ class CreditCardView extends StatefulWidget {
   }
 }
 
+
+
 dynamic callTransactionSubmitApi(
     BuildContext context,
     BasketProvider basketProvider,
@@ -69,6 +74,7 @@ dynamic callTransactionSubmitApi(
     String token,
     String couponDiscount,
     String memoText,
+    String pointsStr,
     bool isClickPickUpButton,
     String deliveryPickUpDate,
     String deliveryPickUpTime) async {
@@ -103,6 +109,7 @@ dynamic callTransactionSubmitApi(
               basketProvider.checkoutCalculationHelper.shippingCost.toString(),
               userLoginProvider.user.data.area.areaName,
               memoText,
+              pointsStr,
               valueHolder);
       if (_apiStatus.data != null) {
         PsProgressDialog.dismissDialog();
@@ -166,9 +173,17 @@ class CreditCardViewState extends State<CreditCardView> {
   String cardHolderName = '';
   String cvvCode = '';
   bool isCvvFocused = false;
+  String pointsStr = '';
+
+
+  getPointValue()async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    pointsStr = prefs.getString('points_pref');
+  }
 
   @override
   void initState() {
+    getPointValue();
     StripePayment.setOptions(StripeOptions(
         publishableKey: widget.publishKey,
         merchantId: 'Test',
@@ -217,6 +232,7 @@ class CreditCardViewState extends State<CreditCardView> {
           token,
           widget.couponDiscount,
           widget.memoText,
+          widget.pointsSt,
           widget.isClickPickUpButton,
           widget.deliveryPickUpDate,
           widget.deliveryPickUpTime);

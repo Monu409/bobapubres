@@ -157,6 +157,7 @@ class TransactionHeaderProvider extends PsProvider {
       String shippingMethodPrice,
       String shippingMethodName,
       String memoText,
+      String points,
       PsValueHolder valueHolder) async {
     psValueHolder = valueHolder;
 
@@ -254,6 +255,7 @@ class TransactionHeaderProvider extends PsProvider {
       shippingTaxPercent: psValueHolder.shippingTaxLabel.isEmpty ? '0' : psValueHolder.shippingTaxLabel,
       taxPercent: psValueHolder.overAllTaxLabel.isEmpty ? '0' : psValueHolder.overAllTaxLabel,
       memo: memoText ?? '',
+      points: points,
       totalItemCount: totalItemCount.toString(),
       details: detailJson,
     );
@@ -375,6 +377,7 @@ class TransactionSubmitMap {
       this.shippingTaxPercent,
       this.taxPercent,
       this.memo,
+      this.points,
       this.totalItemCount,
       this.details});
 
@@ -411,6 +414,7 @@ class TransactionSubmitMap {
   String shippingTaxPercent;
   String taxPercent;
   String memo;
+  String points;
   String totalItemCount;
   List<Map<String, dynamic>> details;
 
@@ -449,6 +453,7 @@ class TransactionSubmitMap {
     map['shipping_tax_percent'] = shippingTaxPercent;
     map['tax_percent'] = taxPercent;
     map['memo'] = memo;
+    map['points'] = points;
     map['total_item_count'] = totalItemCount;
     map['details'] = details;
 

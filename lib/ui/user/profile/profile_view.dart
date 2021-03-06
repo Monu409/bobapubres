@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutterrestaurant/config/ps_colors.dart';
 import 'package:flutterrestaurant/constant/ps_dimens.dart';
 import 'package:flutterrestaurant/constant/route_paths.dart';
@@ -11,6 +13,7 @@ import 'package:flutterrestaurant/utils/utils.dart';
 import 'package:flutterrestaurant/viewobject/common/ps_value_holder.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_xlider/flutter_xlider.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({
@@ -37,32 +40,32 @@ class _ProfilePageState extends State<ProfileView>
     widget.animationController.forward();
 
     return
-        // SingleChildScrollView(
-        //     child: Container(
-        //   color: PsColors.coreBackgroundColor,
-        //   height: widget.flag ==
-        //           PsConst.REQUEST_CODE__DASHBOARD_SELECT_WHICH_USER_FRAGMENT
-        //       ? MediaQuery.of(context).size.height - 100
-        //       : MediaQuery.of(context).size.height - 40,
-        //   child:
-        CustomScrollView(scrollDirection: Axis.vertical, slivers: <Widget>[
-      _ProfileDetailWidget(
-        animationController: widget.animationController,
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(
-          CurvedAnimation(
-            parent: widget.animationController,
-            curve:
-                const Interval((1 / 4) * 2, 1.0, curve: Curves.fastOutSlowIn),
+      // SingleChildScrollView(
+      //     child: Container(
+      //   color: PsColors.coreBackgroundColor,
+      //   height: widget.flag ==
+      //           PsConst.REQUEST_CODE__DASHBOARD_SELECT_WHICH_USER_FRAGMENT
+      //       ? MediaQuery.of(context).size.height - 100
+      //       : MediaQuery.of(context).size.height - 40,
+      //   child:
+      CustomScrollView(scrollDirection: Axis.vertical, slivers: <Widget>[
+        _ProfileDetailWidget(
+          animationController: widget.animationController,
+          animation: Tween<double>(begin: 0.0, end: 1.0).animate(
+            CurvedAnimation(
+              parent: widget.animationController,
+              curve:
+              const Interval((1 / 4) * 2, 1.0, curve: Curves.fastOutSlowIn),
+            ),
           ),
+          userId: widget.userId,
         ),
-        userId: widget.userId,
-      ),
-      _TransactionListViewWidget(
-        scaffoldKey: widget.scaffoldKey,
-        animationController: widget.animationController,
-        userId: widget.userId,
-      )
-    ]);
+        _TransactionListViewWidget(
+          scaffoldKey: widget.scaffoldKey,
+          animationController: widget.animationController,
+          userId: widget.userId,
+        )
+      ]);
     //));
   }
 }
@@ -70,9 +73,9 @@ class _ProfilePageState extends State<ProfileView>
 class _TransactionListViewWidget extends StatelessWidget {
   const _TransactionListViewWidget(
       {Key key,
-      @required this.animationController,
-      @required this.userId,
-      @required this.scaffoldKey})
+        @required this.animationController,
+        @required this.userId,
+        @required this.scaffoldKey})
       : super(key: key);
 
   final AnimationController animationController;
@@ -91,9 +94,9 @@ class _TransactionListViewWidget extends StatelessWidget {
             lazy: false,
             create: (BuildContext context) {
               final TransactionHeaderProvider provider =
-                  TransactionHeaderProvider(
-                      repo: transactionHeaderRepository,
-                      psValueHolder: psValueHolder);
+              TransactionHeaderProvider(
+                  repo: transactionHeaderRepository,
+                  psValueHolder: psValueHolder);
               if (provider.psValueHolder.loginUserId == null ||
                   provider.psValueHolder.loginUserId == '') {
                 provider.loadTransactionList(userId);
@@ -106,7 +109,7 @@ class _TransactionListViewWidget extends StatelessWidget {
             },
             child: Consumer<TransactionHeaderProvider>(builder:
                 (BuildContext context, TransactionHeaderProvider provider,
-                    Widget child) {
+                Widget child) {
               if (provider.transactionList != null &&
                   provider.transactionList.data.isNotEmpty) {
                 return Padding(
@@ -115,54 +118,54 @@ class _TransactionListViewWidget extends StatelessWidget {
                     _OrderAndSeeAllWidget(),
                     Container(
                         child: RefreshIndicator(
-                      child: CustomScrollView(
-                          physics: const NeverScrollableScrollPhysics(),
-                          scrollDirection: Axis.vertical,
-                          shrinkWrap: true,
-                          slivers: <Widget>[
-                            SliverList(
-                              delegate: SliverChildBuilderDelegate(
-                                (BuildContext context, int index) {
-                                  if (provider.transactionList.data != null ||
-                                      provider
-                                          .transactionList.data.isNotEmpty) {
-                                    final int count =
-                                        provider.transactionList.data.length;
-                                    return TransactionListItem(
-                                      scaffoldKey: scaffoldKey,
-                                      animationController: animationController,
-                                      animation:
+                          child: CustomScrollView(
+                              physics: const NeverScrollableScrollPhysics(),
+                              scrollDirection: Axis.vertical,
+                              shrinkWrap: true,
+                              slivers: <Widget>[
+                                SliverList(
+                                  delegate: SliverChildBuilderDelegate(
+                                        (BuildContext context, int index) {
+                                      if (provider.transactionList.data != null ||
+                                          provider
+                                              .transactionList.data.isNotEmpty) {
+                                        final int count =
+                                            provider.transactionList.data.length;
+                                        return TransactionListItem(
+                                          scaffoldKey: scaffoldKey,
+                                          animationController: animationController,
+                                          animation:
                                           Tween<double>(begin: 0.0, end: 1.0)
                                               .animate(
-                                        CurvedAnimation(
-                                          parent: animationController,
-                                          curve: Interval(
-                                              (1 / count) * index, 1.0,
-                                              curve: Curves.fastOutSlowIn),
-                                        ),
-                                      ),
-                                      transaction:
+                                            CurvedAnimation(
+                                              parent: animationController,
+                                              curve: Interval(
+                                                  (1 / count) * index, 1.0,
+                                                  curve: Curves.fastOutSlowIn),
+                                            ),
+                                          ),
+                                          transaction:
                                           provider.transactionList.data[index],
-                                      onTap: () {
-                                        Navigator.pushNamed(context,
-                                            RoutePaths.transactionDetail,
-                                            arguments: provider
-                                                .transactionList.data[index]);
-                                      },
-                                    );
-                                  } else {
-                                    return null;
-                                  }
-                                },
-                                childCount:
+                                          onTap: () {
+                                            Navigator.pushNamed(context,
+                                                RoutePaths.transactionDetail,
+                                                arguments: provider
+                                                    .transactionList.data[index]);
+                                          },
+                                        );
+                                      } else {
+                                        return null;
+                                      }
+                                    },
+                                    childCount:
                                     provider.transactionList.data.length,
-                              ),
-                            ),
-                          ]),
-                      onRefresh: () {
-                        return provider.resetTransactionList();
-                      },
-                    )),
+                                  ),
+                                ),
+                              ]),
+                          onRefresh: () {
+                            return provider.resetTransactionList();
+                          },
+                        )),
                   ]),
                 );
               } else {
@@ -189,8 +192,20 @@ class _ProfileDetailWidget extends StatefulWidget {
 }
 
 class __ProfileDetailWidgetState extends State<_ProfileDetailWidget> {
+  Color color1,color2,color3,color4,color5;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    color1 = Colors.white;
+    color2 = Colors.white;
+    color3 = Colors.white;
+    color4 = Colors.white;
+    color5 = Colors.white;
+  }
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     const Widget _dividerWidget = Divider(
       height: 1,
     );
@@ -200,6 +215,137 @@ class __ProfileDetailWidgetState extends State<_ProfileDetailWidget> {
     userRepository = Provider.of<UserRepository>(context);
     psValueHolder = Provider.of<PsValueHolder>(context);
     provider = UserProvider(repo: userRepository, psValueHolder: psValueHolder);
+
+    List<int> getNearstValue(String mValue){
+      List<int> allValues = [];
+      int intValue = int.parse(mValue);
+      int length = mValue.length;
+      if(length == 1){
+        allValues = [2,4,6,8,10,12];
+        if(intValue<2 && intValue>4){
+          color1 = Colors.green;
+        }
+        else if(intValue<6){
+          color1 = Colors.green;
+          color2 = Colors.green;
+        }
+        else if(intValue<8){
+          color1 = Colors.green;
+          color2 = Colors.green;
+          color3 = Colors.green;
+        }
+        else if(intValue<10){
+          color1 = Colors.green;
+          color2 = Colors.green;
+          color3 = Colors.green;
+          color4 = Colors.green;
+        }
+        else if(intValue>10){
+          color1 = Colors.green;
+          color2 = Colors.green;
+          color3 = Colors.green;
+          color4 = Colors.green;
+          color5 = Colors.green;
+        }
+      }
+      else if(length == 2){
+        allValues = [20,40,60,80,100,120];
+      }
+      else if(length == 3){
+        if(intValue<500){
+          allValues = [80,160,240,320,400,480];
+          if(intValue>80 && intValue<160){
+            color1 = Colors.green;
+          }
+          else if(intValue<240){
+            color1 = Colors.green;
+            color2 = Colors.green;
+          }
+          else if(intValue<320){
+            color1 = Colors.green;
+            color2 = Colors.green;
+            color3 = Colors.green;
+          }
+          else if(intValue<400){
+            color1 = Colors.green;
+            color2 = Colors.green;
+            color3 = Colors.green;
+            color4 = Colors.green;
+          }
+          else if(intValue>400){
+            color1 = Colors.green;
+            color2 = Colors.green;
+            color3 = Colors.green;
+            color4 = Colors.green;
+            color5 = Colors.green;
+          }
+        }
+        else {
+          allValues = [200, 400, 600, 800, 1000,1200];
+          if(intValue>200 && intValue<400){
+            color1 = Colors.green;
+          }
+          else if(intValue<600){
+            color1 = Colors.green;
+            color2 = Colors.green;
+          }
+          else if(intValue<800){
+            color1 = Colors.green;
+            color2 = Colors.green;
+            color3 = Colors.green;
+          }
+          else if(intValue<1000){
+            color1 = Colors.green;
+            color2 = Colors.green;
+            color3 = Colors.green;
+            color4 = Colors.green;
+          }
+          else if(intValue>1000){
+            color1 = Colors.green;
+            color2 = Colors.green;
+            color3 = Colors.green;
+            color4 = Colors.green;
+            color5 = Colors.green;
+          }
+        }
+      }
+      return allValues;
+    }
+
+    customHandler(IconData icon,Color cColor) {
+      return FlutterSliderHandler(
+        decoration: BoxDecoration(),
+        child: Icon(
+          icon,
+          color: cColor,
+          size: 23,
+        ),
+      );
+    }
+    Widget getDivider(double size,Color color){
+      return Container(
+          width: size,
+          child: Divider(
+            color: Colors.transparent,
+            height: 70,
+            thickness: 1.5,
+          )
+      );
+    }
+    Widget smallCircle(Color mColor){
+      return Container(
+          height: 10,
+          width: 10,
+          decoration: BoxDecoration(
+              color: mColor,
+              border: Border.all(
+                color: Colors.grey,
+              ),
+              borderRadius: BorderRadius.all(Radius.circular(20))
+          ),
+          child: Container()
+      );
+    }
 
     return SliverToBoxAdapter(
       child: ChangeNotifierProvider<UserProvider>(
@@ -231,6 +377,202 @@ class __ProfileDetailWidgetState extends State<_ProfileDetailWidget> {
                         _dividerWidget,
                         _JoinDateWidget(userProvider: provider),
                         _dividerWidget,
+                        Stack(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(provider.user.data.rewards,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w800
+                                  ),),
+                                  Text('Points Balance'),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                              child: Column(children: <Widget>[
+                                Stack(
+                                  children: [
+                                    Container(
+                                  width: double.infinity,
+                                  alignment: Alignment.centerLeft,
+                                  child: FlutterSlider(
+                                    values: [double.parse(provider.user.data.rewards)],
+                                    rangeSlider: false,
+                                    max: double.parse((getNearstValue(provider.user.data.rewards)[5]).toString()),
+                                    min: 0.0,
+                                    step: FlutterSliderStep(step: 10),
+                                    jump: false,
+                                    trackBar: FlutterSliderTrackBar(
+                                      inactiveTrackBarHeight: 2,
+                                      activeTrackBarHeight: 2,
+                                      inactiveTrackBar: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        color: Colors.transparent,
+                                        // border: Border.all(width: 3, color: Colors.green),
+                                      ),
+                                      activeTrackBar: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(4),
+                                          color: Colors.transparent),
+                                    ),
+
+                                    disabled: false,
+
+                                    handler: customHandler(Icons.place,Colors.green),
+
+                                    onDragging: null,
+                                  )),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 10),
+                                      child: Stack(
+                                        children: [
+                                          Container(
+                                              width: double.infinity,
+                                              alignment: Alignment.centerLeft,
+                                              child: FlutterSlider(
+                                                values: [double.parse(provider.user.data.rewards)],
+                                                rangeSlider: false,
+                                                max: double.parse((getNearstValue(provider.user.data.rewards)[5]).toString()),
+                                                min: 0.0,
+                                                step: FlutterSliderStep(step: 100),
+                                                jump: false,
+                                                trackBar: FlutterSliderTrackBar(
+                                                  inactiveTrackBarHeight: 2,
+                                                  activeTrackBarHeight: 2,
+                                                  inactiveTrackBar: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(20),
+                                                    color: Colors.grey,
+                                                    // border: Border.all(width: 3, color: Colors.green),
+                                                  ),
+                                                  activeTrackBar: BoxDecoration(
+                                                      borderRadius: BorderRadius.circular(4),
+                                                      color: Colors.green),
+                                                ),
+
+                                                disabled: false,
+
+                                                handler: customHandler(Icons.place,Colors.transparent),
+
+                                                onDragging: null,
+                                              )
+                                          ),
+                                          Row(
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              children: <Widget>[
+                                                getDivider(width*0.132, Colors.transparent),
+                                                smallCircle(color1),
+                                                getDivider(width*0.132, Colors.transparent),
+                                                smallCircle(color2),
+                                                getDivider(width*0.132, Colors.grey),
+                                                smallCircle(color3),
+                                                getDivider(width*0.132, Colors.grey),
+                                                smallCircle(color4),
+                                                getDivider(width*0.132, Colors.grey),
+                                                smallCircle(color5),
+                                                getDivider(width*0.132, Colors.grey),
+                                                // getDivider(width*0.132, Colors.grey),
+                                                // getDivider(width*0.132, Colors.grey),
+                                              ]),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 50.0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: [
+                                      Text(
+                                        (getNearstValue(provider.user.data.rewards)[0]).toString(),
+                                        style: TextStyle(
+                                            color: Colors.grey
+                                        ),
+                                      ),
+                                      Text(
+                                        (getNearstValue(provider.user.data.rewards)[1]).toString(),
+                                        style: TextStyle(
+                                            color: Colors.grey
+                                        ),
+                                      ),
+                                      Text(
+                                        (getNearstValue(provider.user.data.rewards)[2]).toString(),
+                                        style: TextStyle(
+                                            color: Colors.grey
+                                        ),
+                                      ),
+                                      Text(
+                                        (getNearstValue(provider.user.data.rewards)[3]).toString(),
+                                        style: TextStyle(
+                                            color: Colors.grey
+                                        ),
+                                      ),
+                                      Text(
+                  (getNearstValue(provider.user.data.rewards)[4]).toString(),
+                  style: TextStyle(
+                      color: Colors.grey
+                  ),
+                ),
+                                    ],
+                                  ),
+                                ),
+                              ]
+                              ),
+                              // child: Column(
+                              //   children: <Widget>[
+                              //     Row(
+                              //       crossAxisAlignment: CrossAxisAlignment.center,
+                              //       mainAxisSize: MainAxisSize.min,
+                              //       textDirection: TextDirection.ltr,
+                              //       children: <Widget>[
+                              //         Text(
+                              //           '0',
+                              //           textDirection: TextDirection.ltr,
+                              //         ),
+                              //         Container(
+                              //             margin: EdgeInsets.fromLTRB(10, 0, 10, 4),
+                              //             width: 200,
+                              //             child: SeekBar(
+                              //                 progresseight: 5,
+                              //                 value: double.parse(provider.user.data.rewards),
+                              //                 min: -10,
+                              //                 max: double.parse(provider.user.data.rewards)+100,
+                              //                 sectionCount: 4,
+                              //                 sectionRadius: 6,
+                              //                 sectionColor: Colors.red,
+                              //                 hideBubble: false,
+                              //                 alwaysShowBubble: true,
+                              //                 bubbleRadius: 14,
+                              //                 bubbleColor: Colors.purple,
+                              //                 bubbleTextColor: Colors.white,
+                              //                 bubbleTextSize: 14,
+                              //                 bubbleMargin: 4,
+                              //                 onValueChanged: (v) {
+                              //                   print(v);
+                              //                 }
+                              //                 )
+                              //         ),
+                              //         Text(
+                              //           (double.parse(provider.user.data.rewards)+100).toString(),
+                              //           textDirection: TextDirection.ltr,
+                              //         )
+                              //       ],
+                              //     ),
+                              //     // Text(
+                              //     //   "",
+                              //     //   textDirection: TextDirection.ltr,
+                              //     //   style: TextStyle(fontSize: 10),
+                              //     // )
+                              //   ],
+                              // ),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),
@@ -436,30 +778,30 @@ class _EditAndHistoryTextWidget extends StatelessWidget {
             },
             child: checkText == 0
                 ? Text(
-                    Utils.getString(context, 'profile__edit'),
-                    softWrap: false,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText2
-                        .copyWith(fontWeight: FontWeight.bold),
-                  )
+              Utils.getString(context, 'profile__edit'),
+              softWrap: false,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyText2
+                  .copyWith(fontWeight: FontWeight.bold),
+            )
                 : checkText == 1
-                    ? Text(
-                        Utils.getString(context, 'profile__history'),
-                        softWrap: false,
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyText2
-                            .copyWith(fontWeight: FontWeight.bold),
-                      )
-                    : Text(
-                        Utils.getString(context, 'profile__transaction'),
-                        softWrap: false,
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyText2
-                            .copyWith(fontWeight: FontWeight.bold),
-                      )));
+                ? Text(
+              Utils.getString(context, 'profile__history'),
+              softWrap: false,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyText2
+                  .copyWith(fontWeight: FontWeight.bold),
+            )
+                : Text(
+              Utils.getString(context, 'profile__transaction'),
+              softWrap: false,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyText2
+                  .copyWith(fontWeight: FontWeight.bold),
+            )));
   }
 }
 

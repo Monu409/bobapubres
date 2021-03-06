@@ -3,8 +3,9 @@ import 'package:flutterrestaurant/viewobject/shipping_area.dart';
 import 'package:quiver/core.dart';
 
 class User extends PsObject<User> {
-  User(
-      {this.userId,
+  User({
+      this.userId,
+      this.rewards,
       this.userIsSysAdmin,
       this.isShopAdmin,
       this.facebookId,
@@ -29,6 +30,7 @@ class User extends PsObject<User> {
       this.addedDateStr,
       this.area});
   String userId;
+  String rewards;
   String userIsSysAdmin;
   String isShopAdmin;
   String facebookId;
@@ -71,6 +73,7 @@ class User extends PsObject<User> {
     if (dynamicData != null) {
       return User(
         userId: dynamicData['user_id'],
+        rewards: dynamicData['rewards'],
         userIsSysAdmin: dynamicData['user_is_sys_admin'],
         isShopAdmin: dynamicData['is_shop_admin'],
         facebookId: dynamicData['facebook_id'],
@@ -105,6 +108,7 @@ class User extends PsObject<User> {
     if (object != null) {
       final Map<String, dynamic> data = <String, dynamic>{};
       data['user_id'] = object.userId;
+      data['rewards'] = object.rewards;
       data['user_is_sys_admin'] = object.userIsSysAdmin;
       data['is_shop_admin'] = object.isShopAdmin;
       data['facebook_id'] = object.facebookId;

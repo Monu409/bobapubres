@@ -427,6 +427,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.5.1+4"
+  flutter_xlider:
+    dependency: "direct dev"
+    description:
+      name: flutter_xlider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.4.0"
   fluttertoast:
     dependency: "direct dev"
     description:

@@ -300,6 +300,11 @@ class PsApiService extends PsApi {
 
   Future<PsResource<List<TransactionHeader>>> getTransactionList(
       String userId, int limit, int offset) async {
+    // final String url =
+    //     '${PsUrl.ps_transactionList_url}/api_key/${PsConfig.ps_api_key}/user_id/$userId/limit/$limit/offset/$offset';
+    //
+    // return await getServerCall<TransactionHeader, List<TransactionHeader>>(
+    //     TransactionHeader(), url);
     final String url =
         '${PsUrl.ps_transactionList_url}/api_key/${PsConfig.ps_api_key}/user_id/$userId/limit/$limit/offset/$offset';
 

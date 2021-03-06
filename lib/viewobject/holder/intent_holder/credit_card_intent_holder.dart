@@ -14,6 +14,7 @@ class CreditCardIntentHolder {
       @required this.userProvider,
       @required this.basketProvider,
       @required this.memoText,
+      @required this.pointsStr,
       @required this.publishKey,
       @required this.isClickPickUpButton,
       @required this.deliveryPickUpDate, 
@@ -26,6 +27,7 @@ class CreditCardIntentHolder {
   final UserProvider userProvider;
   final BasketProvider basketProvider;
   final String memoText;
+  final String pointsStr;
   final String publishKey;
   final bool isClickPickUpButton;
   final String deliveryPickUpDate;

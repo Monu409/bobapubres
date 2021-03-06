@@ -27,6 +27,7 @@ import 'package:flutterrestaurant/viewobject/holder/intent_holder/checkout_statu
 import 'package:flutterrestaurant/viewobject/transaction_header.dart';
 import 'package:provider/provider.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Checkout3View extends StatefulWidget {
   const Checkout3View(
@@ -67,9 +68,21 @@ class _Checkout3ViewState extends State<Checkout3View> {
   CouponDiscountProvider couponDiscountProvider;
   BasketProvider basketProvider;
   final TextEditingController memoController = TextEditingController();
+  String pointsStr = '';
 
   void checkStatus() {
     print('Checking Status ... $isCheckBoxSelect');
+  }
+
+  getPointValue()async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    pointsStr = prefs.getString('points_pref');
+  }
+
+  @override
+  initState(){
+    super.initState();
+    getPointValue();
   }
 
   dynamic callBankNow(
@@ -112,7 +125,8 @@ class _Checkout3ViewState extends State<Checkout3View> {
                 basketProvider.checkoutCalculationHelper.shippingCost
                     .toString(),
                 userLoginProvider.user.data.area.areaName,
-                memoController.text, 
+                memoController.text,
+                pointsStr,
                 valueHolder);
 
         if (_apiStatus.data != null) {
@@ -190,6 +204,7 @@ class _Checkout3ViewState extends State<Checkout3View> {
                     .toString(),
                 userLoginProvider.user.data.area.areaName,
                 memoController.text,
+                pointsStr,
                 valueHolder);
 
         if (_apiStatus.data != null) {
@@ -267,6 +282,7 @@ class _Checkout3ViewState extends State<Checkout3View> {
                     .toString(),
                 userLoginProvider.user.data.area.areaName,
                 memoController.text,
+                pointsStr,
                 valueHolder);
 
         if (_apiStatus.data != null) {
@@ -400,6 +416,7 @@ class _Checkout3ViewState extends State<Checkout3View> {
               basketProvider.checkoutCalculationHelper.shippingCost.toString(),
               userProvider.user.data.area.areaName,
               memoController.text,
+              pointsStr,
               valueHolder);
 
       if (_apiStatus.data != null) {
@@ -526,6 +543,7 @@ class _Checkout3ViewState extends State<Checkout3View> {
                       .toString(),
                   userProvider.user.data.area.areaName,
                   memoController.text,
+                  pointsStr,
                   valueHolder);
 
           if (_apiStatus.data != null) {

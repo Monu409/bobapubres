@@ -35,6 +35,7 @@ class PayStackView extends StatefulWidget {
       @required this.userLoginProvider,
       @required this.basketProvider,
       @required this.memoText,
+      @required this.pointsStr,
       @required this.paystackKey,
       @required this.isClickPickUpButton,
       @required this.deliveryPickUpDate,
@@ -48,6 +49,7 @@ class PayStackView extends StatefulWidget {
   final UserProvider userLoginProvider;
   final BasketProvider basketProvider;
   final String memoText;
+  final String pointsStr;
   final String paystackKey;
   final bool isClickPickUpButton;
   final String deliveryPickUpDate;
@@ -68,6 +70,7 @@ dynamic callTransactionSubmitApi(
   String token,
   String couponDiscount,
   String memoText,
+  String pointsStr,
   bool isClickPickUpButton,
   String deliveryPickUpDate,
   String deliveryPickUpTime,
@@ -103,6 +106,7 @@ dynamic callTransactionSubmitApi(
               basketProvider.checkoutCalculationHelper.shippingCost.toString(),
               userLoginProvider.user.data.area.areaName,
               memoText,
+              pointsStr,
               valueHolder);
 
       PsProgressDialog.dismissDialog();
@@ -206,6 +210,7 @@ class PayStackViewState extends State<PayStackView> {
           token,
           widget.couponDiscount,
           widget.memoText,
+          widget.pointsStr,
           widget.isClickPickUpButton,
           widget.deliveryPickUpDate,
           widget.deliveryPickUpTime);

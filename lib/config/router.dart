@@ -208,6 +208,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
                     creditCardParameterHolder.deliveryPickUpDate,
                 deliveryPickUpTime:
                     creditCardParameterHolder.deliveryPickUpTime,
+                pointsSt: creditCardParameterHolder.pointsStr,
               ));
 
     case '${RoutePaths.paystack}':
