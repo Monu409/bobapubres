@@ -279,6 +279,7 @@ class __ProfileDetailWidgetState extends State<_ProfileDetailWidget> {
             color4 = Colors.green;
             color5 = Colors.green;
             // color5 = Colors.green;
+            // color5 = Colors.green;
           }
         }
         else {
