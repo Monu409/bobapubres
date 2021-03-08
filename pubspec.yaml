@@ -141,6 +141,7 @@ dev_dependencies:
   flutter_launcher_icons: ^0.8.1
   flutter_xlider: ^3.4.0
   #flutter_local_notifications:
+  #flutter_local_notifications:
   #  path: lib/utils/local_noti/
 
   
