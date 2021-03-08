@@ -41,7 +41,6 @@ class _ProfilePageState extends State<ProfileView>
 
     return
       // SingleChildScrollView(
-      // SingleChildScrollView(
       //     child: Container(
       //   color: PsColors.coreBackgroundColor,
       //   height: widget.flag ==
