@@ -17,7 +17,7 @@ abstract class PsApi {
   Future<List<dynamic>> getList(String url) async {
     final Client client = http.Client();
     try {
-      final Response response = await client.get('${PsConfig.ps_app_url}$url');
+      final Response response = await client.get(Uri.parse('${PsConfig.ps_app_url}$url'));
 
       if (response.statusCode == 200 &&
           response.body != null &&
@@ -38,7 +38,7 @@ abstract class PsApi {
       T obj, String url) async {
     final Client client = http.Client();
     try {
-      final Response response = await client.get('${PsConfig.ps_app_url}$url');
+      final Response response = await client.get(Uri.parse('${PsConfig.ps_app_url}$url'));
       print('${PsConfig.ps_app_url}$url');
       final PsApiResponse psApiResponse = PsApiResponse(response);
 
@@ -70,7 +70,7 @@ abstract class PsApi {
     final Client client = http.Client();
     try {
       final Response response = await client
-          .post('${PsConfig.ps_app_url}$url',
+          .post(Uri.parse('${PsConfig.ps_app_url}$url'),
               headers: <String, String>{'content-type': 'application/json'},
               body: const JsonEncoder().convert(jsonMap))
           .catchError((dynamic e) {

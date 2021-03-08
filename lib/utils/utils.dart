@@ -366,9 +366,9 @@ class Utils {
 
   static void subscribeToTopic(bool isEnable) {
     if (isEnable) {
-      final FirebaseMessaging _fcm = FirebaseMessaging();
+      final FirebaseMessaging _fcm = FirebaseMessaging.instance;
       if (Platform.isIOS) {
-        _fcm.requestNotificationPermissions(const IosNotificationSettings());
+        _fcm.requestPermission();
       }
       _fcm.subscribeToTopic('broadcast');
     }
@@ -378,45 +378,53 @@ class Utils {
       BuildContext context, FirebaseMessaging _fcm, String loginUserId) {
     // final FirebaseMessaging _fcm = FirebaseMessaging();
     if (Platform.isIOS) {
-      _fcm.requestNotificationPermissions(const IosNotificationSettings());
+      _fcm.requestPermission();
     }
 
-    _fcm.configure(
-      onMessage: (Map<String, dynamic> message) async {
-        print('onMessage: $message');
+    FirebaseMessaging.onMessage.listen((event) {
+      // TODO -> implement notification
+    });
 
-        final String notiMessage = _parseNotiMessage(message);
+    FirebaseMessaging.onBackgroundMessage((message)async {
+      // TODO -> implement notification
+    });
 
-        Utils.takeDataFromNoti(context, message, loginUserId);
-
-        PsSharedPreferences.instance.replaceNotiMessage(
-          notiMessage,
-        );
-      },
-      onBackgroundMessage: Platform.isIOS ? null : myBackgroundMessageHandler,
-      onLaunch: (Map<String, dynamic> message) async {
-        print('onLaunch: $message');
-
-        final String notiMessage = _parseNotiMessage(message);
-
-        Utils.takeDataFromNoti(context, message, loginUserId);
-
-        PsSharedPreferences.instance.replaceNotiMessage(
-          notiMessage,
-        );
-      },
-      onResume: (Map<String, dynamic> message) async {
-        print('onResume: $message');
-
-        final String notiMessage = _parseNotiMessage(message);
-
-        Utils.takeDataFromNoti(context, message, loginUserId);
-
-        PsSharedPreferences.instance.replaceNotiMessage(
-          notiMessage,
-        );
-      },
-    );
+    // _fcm.configure(
+    //   onMessage: (Map<String, dynamic> message) async {
+    //     print('onMessage: $message');
+    //
+    //     final String notiMessage = _parseNotiMessage(message);
+    //
+    //     Utils.takeDataFromNoti(context, message, loginUserId);
+    //
+    //     PsSharedPreferences.instance.replaceNotiMessage(
+    //       notiMessage,
+    //     );
+    //   },
+    //   onBackgroundMessage: Platform.isIOS ? null : myBackgroundMessageHandler,
+    //   onLaunch: (Map<String, dynamic> message) async {
+    //     print('onLaunch: $message');
+    //
+    //     final String notiMessage = _parseNotiMessage(message);
+    //
+    //     Utils.takeDataFromNoti(context, message, loginUserId);
+    //
+    //     PsSharedPreferences.instance.replaceNotiMessage(
+    //       notiMessage,
+    //     );
+    //   },
+    //   onResume: (Map<String, dynamic> message) async {
+    //     print('onResume: $message');
+    //
+    //     final String notiMessage = _parseNotiMessage(message);
+    //
+    //     Utils.takeDataFromNoti(context, message, loginUserId);
+    //
+    //     PsSharedPreferences.instance.replaceNotiMessage(
+    //       notiMessage,
+    //     );
+    //   },
+    // );
   }
 
   static dynamic takeDataFromNoti(

@@ -25,10 +25,10 @@ import 'db/common/ps_shared_preferences.dart';
 Future<void> main() async {
   // add this, and it should be the first line in main method
   WidgetsFlutterBinding.ensureInitialized();
-
-  final FirebaseMessaging _fcm = FirebaseMessaging();
+  await EasyLocalization.ensureInitialized();
+  final FirebaseMessaging _fcm = FirebaseMessaging.instance;
   if (Platform.isIOS) {
-    _fcm.requestNotificationPermissions(const IosNotificationSettings());
+    _fcm.requestPermission();
   }
 
   final SharedPreferences prefs = await SharedPreferences.getInstance();

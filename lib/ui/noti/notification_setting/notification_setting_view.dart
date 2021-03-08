@@ -26,7 +26,7 @@ class NotificationSettingView extends StatefulWidget {
 NotificationRepository notiRepository;
 NotificationProvider notiProvider;
 PsValueHolder _psValueHolder;
-final FirebaseMessaging _fcm = FirebaseMessaging();
+final FirebaseMessaging _fcm = FirebaseMessaging.instance;
 
 class _NotificationSettingViewState extends State<NotificationSettingView>
     with SingleTickerProviderStateMixin {

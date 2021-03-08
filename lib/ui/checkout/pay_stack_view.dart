@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:flutter_paystack/flutter_paystack.dart';
+// import 'package:flutter_paystack/flutter_paystack.dart';
 import 'package:flutterrestaurant/api/common/ps_resource.dart';
 import 'package:flutterrestaurant/config/ps_config.dart';
 import 'package:flutterrestaurant/constant/ps_constants.dart';
@@ -142,20 +142,20 @@ dynamic callTransactionSubmitApi(
   }
 }
 
-PaymentCard callCard(
-  String cardNumber,
-  String expiryDate,
-  String cardHolderName,
-  String cvvCode,
-) {
-  final List<String> monthAndYear = expiryDate.split('/');
-  return PaymentCard(
-      number: cardNumber,
-      expiryMonth: int.parse(monthAndYear[0]),
-      expiryYear: int.parse(monthAndYear[1]),
-      name: cardHolderName,
-      cvc: cvvCode);
-}
+// PaymentCard callCard(
+//   String cardNumber,
+//   String expiryDate,
+//   String cardHolderName,
+//   String cvvCode,
+// ) {
+//   final List<String> monthAndYear = expiryDate.split('/');
+//   return PaymentCard(
+//       number: cardNumber,
+//       expiryMonth: int.parse(monthAndYear[0]),
+//       expiryYear: int.parse(monthAndYear[1]),
+//       name: cardHolderName,
+//       cvc: cvvCode);
+// }
 
 class PayStackViewState extends State<PayStackView> {
   String cardNumber = '';
@@ -166,7 +166,7 @@ class PayStackViewState extends State<PayStackView> {
 
   @override
   void initState() {
-    PaystackPlugin.initialize(publicKey: widget.paystackKey);
+    // PaystackPlugin.initialize(publicKey: widget.paystackKey);
     super.initState();
   }
 
@@ -277,38 +277,40 @@ class PayStackViewState extends State<PayStackView> {
                                 Utils.getString(
                                     context, 'warning_dialog__input_cvv'));
                           } else {
-                            final Charge charge = Charge()
-                              ..amount = (double.parse(Utils.getPriceTwoDecimal(
-                                          widget
-                                              .basketProvider
-                                              .checkoutCalculationHelper
-                                              .totalPrice
-                                              .toString())) *
-                                      100)
-                                  .round()
-                              ..email =
-                                  widget.userLoginProvider.user.data.userEmail
-                              ..reference = _getReference()
-                              ..card = callCard(cardNumber, expiryDate,
-                                  cardHolderName, cvvCode);
-                            try {
-                              final CheckoutResponse response =
-                                  await PaystackPlugin.checkout(
-                                context,
-                                method: CheckoutMethod.card,
-                                charge: charge,
-                                fullscreen: false,
-                                // logo: MyLogo(),
-                              );
-                              if (response.status) {
-                                payStackNow(response.reference);
-                              }
-                            } catch (e) {
-                              print('Check console for error');
-                              rethrow;
-                            }
+                          //   final Charge charge = Charge()
+                          //     ..amount = (double.parse(Utils.getPriceTwoDecimal(
+                          //                 widget
+                          //                     .basketProvider
+                          //                     .checkoutCalculationHelper
+                          //                     .totalPrice
+                          //                     .toString())) *
+                          //             100)
+                          //         .round()
+                          //     ..email =
+                          //         widget.userLoginProvider.user.data.userEmail
+                          //     ..reference = _getReference()
+                          //     ..card = callCard(cardNumber, expiryDate,
+                          //         cardHolderName, cvvCode);
+                          //   try {
+                          //     final CheckoutResponse response =
+                          //         await PaystackPlugin.checkout(
+                          //       context,
+                          //       method: CheckoutMethod.card,
+                          //       charge: charge,
+                          //       fullscreen: false,
+                          //       // logo: MyLogo(),
+                          //     );
+                          //     if (response.status) {
+                          //       payStackNow(response.reference);
+                          //     }
+                          //   } catch (e) {
+                          //     print('Check console for error');
+                          //     rethrow;
+                          //   }
                           }
-                        })),
+                        }
+                          )
+    ),
                 const SizedBox(height: PsDimens.space40)
               ],
             )),

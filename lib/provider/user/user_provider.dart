@@ -868,7 +868,7 @@ class UserProvider extends PsProvider {
 
     // Get User Info Based on the Access Token
     final dynamic graphResponse = await http.get(
-        'https://graph.facebook.com/v2.12/me?fields=name,first_name,last_name,email&access_token=$result');
+        Uri.parse('https://graph.facebook.com/v2.12/me?fields=name,first_name,last_name,email&access_token=$result'));
     final dynamic profile = json.decode(graphResponse.body);
 
     // Firebase Base Login

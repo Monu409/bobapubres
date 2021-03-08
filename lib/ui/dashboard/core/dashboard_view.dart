@@ -81,7 +81,7 @@ class _HomeViewState extends State<DashboardView>
 
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   ShopInfoProvider shopInfoProvider;
-  final FirebaseMessaging _fcm = FirebaseMessaging();
+  final FirebaseMessaging _fcm = FirebaseMessaging.instance;
   bool isResumed = false;
 
   @override
@@ -869,7 +869,7 @@ class _HomeViewState extends State<DashboardView>
 
             if (provider.psValueHolder.deviceToken == null ||
                 provider.psValueHolder.deviceToken == '') {
-              final FirebaseMessaging _fcm = FirebaseMessaging();
+              final FirebaseMessaging _fcm = FirebaseMessaging.instance;
               Utils.saveDeviceToken(_fcm, provider);
             } else {
               print(

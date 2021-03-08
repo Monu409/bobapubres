@@ -86,8 +86,9 @@ class _LanguageSettingViewState extends State<LanguageSettingView> {
 
                           // widget.languageIsChanged();
                           await provider.addLanguage(result);
-                          EasyLocalization.of(context).locale =
-                              Locale(result.languageCode, result.countryCode);
+                          // EasyLocalization.of(context).locale =
+                          //     Locale(result.languageCode, result.countryCode);
+                          context.locale = Locale(result.languageCode, result.countryCode);
                         }
                         Utils.psPrint(result.toString());
                       }),
