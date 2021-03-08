@@ -98,7 +98,7 @@ dev_dependencies:
 
   sembast: 2.4.7+6
   path_provider: 1.6.14
-  intl: 0.17.0
+  intl: any
   shimmer: 1.1.1
   url_launcher: 5.5.2
   carousel_slider:  2.2.1
