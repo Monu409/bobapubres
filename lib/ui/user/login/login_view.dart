@@ -80,39 +80,39 @@ class _LoginViewState extends State<LoginView> {
                   onProfileSelected: widget.onProfileSelected,
                 ),
                 _spacingWidget,
-                _DividerORWidget(),
-                const SizedBox(
-                  height: PsDimens.space12,
-                ),
-                _TermsAndConCheckbox(
-                  provider: provider,
-                  onCheckBoxClick: () {
-                    setState(() {
-                      updateCheckBox(context, provider);
-                    });
-                  },
-                ),
-                const SizedBox(
-                  height: PsDimens.space8,
-                ),
-                if (PsConfig.showPhoneLogin)
-                  _LoginWithPhoneWidget(
-                    onPhoneSignInSelected: widget.onPhoneSignInSelected,
-                    provider: provider,
-                  ),
-                if (PsConfig.showFacebookLogin)
-                  _LoginWithFbWidget(
-                      userProvider: provider,
-                      onFbSignInSelected: widget.onFbSignInSelected),
-                if (PsConfig.showGoogleLogin)
-                  _LoginWithGoogleWidget(
-                      userProvider: provider,
-                      onGoogleSignInSelected: widget.onGoogleSignInSelected),
-                if (Utils.isAppleSignInAvailable == 1 && Platform.isIOS)
-                  _LoginWithAppleIdWidget(
-                      onAppleIdSignInSelected: widget.onGoogleSignInSelected),
-                _spacingWidget,
-                _spacingWidget,
+                // _DividerORWidget(),
+                // const SizedBox(
+                //   height: PsDimens.space12,
+                // ),
+                // _TermsAndConCheckbox(
+                //   provider: provider,
+                //   onCheckBoxClick: () {
+                //     setState(() {
+                //       updateCheckBox(context, provider);
+                //     });
+                //   },
+                // ),
+                // const SizedBox(
+                //   height: PsDimens.space8,
+                // ),
+                // if (PsConfig.showPhoneLogin)
+                //   _LoginWithPhoneWidget(
+                //     onPhoneSignInSelected: widget.onPhoneSignInSelected,
+                //     provider: provider,
+                //   ),
+                // if (PsConfig.showFacebookLogin)
+                //   _LoginWithFbWidget(
+                //       userProvider: provider,
+                //       onFbSignInSelected: widget.onFbSignInSelected),
+                // if (PsConfig.showGoogleLogin)
+                //   _LoginWithGoogleWidget(
+                //       userProvider: provider,
+                //       onGoogleSignInSelected: widget.onGoogleSignInSelected),
+                // if (Utils.isAppleSignInAvailable == 1 && Platform.isIOS)
+                //   _LoginWithAppleIdWidget(
+                //       onAppleIdSignInSelected: widget.onGoogleSignInSelected),
+                // _spacingWidget,
+                // _spacingWidget,
                 _ForgotPasswordAndRegisterWidget(
                   provider: provider,
                   animationController: widget.animationController,
