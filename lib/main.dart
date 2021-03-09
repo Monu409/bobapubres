@@ -23,16 +23,21 @@ import 'config/ps_config.dart';
 import 'db/common/ps_shared_preferences.dart';
 
 Future<void> main() async {
-  // add this, and it should be the first line in main method
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  // await EasyLocalization.ensureInitialized();
-  final FirebaseMessaging _fcm = FirebaseMessaging.instance;
+
+  final FirebaseMessaging _fcm = FirebaseMessaging();
   if (Platform.isIOS) {
-    _fcm.requestPermission();
+    _fcm.requestNotificationPermissions(const IosNotificationSettings());
   }
 
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
 
+  if (prefs.getString('codeC') == null) {
+    await prefs.setString('codeC', null);
+    await prefs.setString('codeL', null);
+  }
+
+  Firebase.initializeApp();
   NativeAdmob(adUnitID: Utils.getAdAppId());
 
   //check is apple signin is available
@@ -43,13 +48,6 @@ Future<void> main() async {
       startLocale: PsConfig.defaultLanguage.toLocale(),
       supportedLocales: getSupportedLanguages(),
       child: PSApp()));
-
-  final SharedPreferences prefs = await SharedPreferences.getInstance();
-
-  if (prefs.getString('codeC') == null) {
-    prefs.setString('codeC', '');
-    prefs.setString('codeL', '');
-  }
 }
 
 List<Locale> getSupportedLanguages() {

@@ -163,9 +163,8 @@ class PsSharedPreferences {
   }
 
   Future<dynamic> replaceDate(String startDate, String endDate) async {
-    await shared.setString(PsConst.VALUE_HOLDER__START_DATE, startDate);
-    await shared.setString(PsConst.VALUE_HOLDER__END_DATE, endDate);
-
+    // await shared.setString(PsConst.VALUE_HOLDER__START_DATE, startDate);
+    // await shared.setString(PsConst.VALUE_HOLDER__END_DATE, endDate);
     loadValueHolder();
   }
 

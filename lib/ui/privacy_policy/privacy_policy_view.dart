@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+// import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:flutterrestaurant/constant/ps_dimens.dart';
 import 'package:flutterrestaurant/provider/about_app/about_app_provider.dart';
 import 'package:flutterrestaurant/repository/about_app_repository.dart';
@@ -46,9 +46,9 @@ class _PrivacyPolicyViewState extends State<PrivacyPolicyView> {
               child: Padding(
                 padding: const EdgeInsets.all(PsDimens.space10),
                 child: SingleChildScrollView(
-                  child: HtmlWidget(
-                    provider.aboutAppList.data[0].privacypolicy,
-                  ),
+                  // child: HtmlWidget(
+                  //   provider.aboutAppList.data[0].privacypolicy,
+                  // ),
                 ),
               ),
               builder: (BuildContext context, Widget child) {

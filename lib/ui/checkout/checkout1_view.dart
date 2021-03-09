@@ -182,10 +182,10 @@ class _Checkout1ViewState extends State<Checkout1View> {
                 if (userProvider.isClickDeliveryButton)
                   Column(
                     children: <Widget>[
-                      CurrentLocationWidget(
-                        androidFusedLocation: true,
-                        textEditingController: addressController,
-                      ),
+                      // CurrentLocationWidget(
+                      //   androidFusedLocation: true,
+                      //   textEditingController: addressController,
+                      // ),
                       Container(
                           width: double.infinity,
                           height: PsDimens.space120,

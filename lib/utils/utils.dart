@@ -45,7 +45,7 @@ class Utils {
     bool emailFormat;
     if (email != '') {
       emailFormat = RegExp(
-              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+          r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
           .hasMatch(email);
     }
     return emailFormat;
@@ -113,7 +113,7 @@ class Utils {
       final Directory _appTempDir = await getTemporaryDirectory();
 
       final Directory _appTempDirFolder =
-          Directory('${_appTempDir.path}/${PsConfig.tmpImageFolderName}');
+      Directory('${_appTempDir.path}/${PsConfig.tmpImageFolderName}');
 
       if (!_appTempDirFolder.existsSync()) {
         await _appTempDirFolder.create(recursive: true);
@@ -124,13 +124,13 @@ class Utils {
 
       print(file.path);
       final ImageProperties properties =
-          await FlutterNativeImage.getImageProperties(file.path);
+      await FlutterNativeImage.getImageProperties(file.path);
       final File compressedFile = await FlutterNativeImage.compressImage(
           file.path,
           quality: 80,
           targetWidth: imageWidth,
           targetHeight:
-              (properties.height * imageWidth / properties.width).round());
+          (properties.height * imageWidth / properties.width).round());
       return compressedFile;
     } else {
       // Toast
@@ -184,7 +184,7 @@ class Utils {
 
   static Future<bool> checkInternetConnectivity() async {
     final ConnectivityResult connectivityResult =
-        await Connectivity().checkConnectivity();
+    await Connectivity().checkConnectivity();
     if (connectivityResult == ConnectivityResult.mobile) {
       return true;
     } else if (connectivityResult == ConnectivityResult.wifi) {
@@ -217,7 +217,7 @@ class Utils {
   static dynamic navigateOnUserVerificationView(
       BuildContext context, Function onLoginSuccess) async {
     PsValueHolder psValueHolder =
-        Provider.of<PsValueHolder>(context, listen: false);
+    Provider.of<PsValueHolder>(context, listen: false);
 
     if (psValueHolder == null ||
         psValueHolder.userIdToVerify == null ||
@@ -282,12 +282,12 @@ class Utils {
   }
 
   static Widget flightShuttleBuilder(
-    BuildContext flightContext,
-    Animation<double> animation,
-    HeroFlightDirection flightDirection,
-    BuildContext fromHeroContext,
-    BuildContext toHeroContext,
-  ) {
+      BuildContext flightContext,
+      Animation<double> animation,
+      HeroFlightDirection flightDirection,
+      BuildContext fromHeroContext,
+      BuildContext toHeroContext,
+      ) {
     return DefaultTextStyle(
       style: DefaultTextStyle.of(toHeroContext).style,
       child: toHeroContext.widget,
@@ -366,9 +366,9 @@ class Utils {
 
   static void subscribeToTopic(bool isEnable) {
     if (isEnable) {
-      final FirebaseMessaging _fcm = FirebaseMessaging.instance;
+      final FirebaseMessaging _fcm = FirebaseMessaging();
       if (Platform.isIOS) {
-        _fcm.requestPermission();
+        _fcm.requestNotificationPermissions(const IosNotificationSettings());
       }
       _fcm.subscribeToTopic('broadcast');
     }
@@ -378,53 +378,45 @@ class Utils {
       BuildContext context, FirebaseMessaging _fcm, String loginUserId) {
     // final FirebaseMessaging _fcm = FirebaseMessaging();
     if (Platform.isIOS) {
-      _fcm.requestPermission();
+      _fcm.requestNotificationPermissions(const IosNotificationSettings());
     }
 
-    FirebaseMessaging.onMessage.listen((event) {
-      // TODO -> implement notification
-    });
-
-    FirebaseMessaging.onBackgroundMessage((message)async {
-      // TODO -> implement notification
-    });
-
-    // _fcm.configure(
-    //   onMessage: (Map<String, dynamic> message) async {
-    //     print('onMessage: $message');
+    //   _fcm.configure(
+    //     onMessage: (Map<String, dynamic> message) async {
+    //       print('onMessage: $message');
     //
-    //     final String notiMessage = _parseNotiMessage(message);
+    //       final String notiMessage = _parseNotiMessage(message);
     //
-    //     Utils.takeDataFromNoti(context, message, loginUserId);
+    //       Utils.takeDataFromNoti(context, message, loginUserId);
     //
-    //     PsSharedPreferences.instance.replaceNotiMessage(
-    //       notiMessage,
-    //     );
-    //   },
-    //   onBackgroundMessage: Platform.isIOS ? null : myBackgroundMessageHandler,
-    //   onLaunch: (Map<String, dynamic> message) async {
-    //     print('onLaunch: $message');
+    //       PsSharedPreferences.instance.replaceNotiMessage(
+    //         notiMessage,
+    //       );
+    //     },
+    //     onBackgroundMessage: Platform.isIOS ? null : myBackgroundMessageHandler,
+    //     onLaunch: (Map<String, dynamic> message) async {
+    //       print('onLaunch: $message');
     //
-    //     final String notiMessage = _parseNotiMessage(message);
+    //       final String notiMessage = _parseNotiMessage(message);
     //
-    //     Utils.takeDataFromNoti(context, message, loginUserId);
+    //       Utils.takeDataFromNoti(context, message, loginUserId);
     //
-    //     PsSharedPreferences.instance.replaceNotiMessage(
-    //       notiMessage,
-    //     );
-    //   },
-    //   onResume: (Map<String, dynamic> message) async {
-    //     print('onResume: $message');
+    //       PsSharedPreferences.instance.replaceNotiMessage(
+    //         notiMessage,
+    //       );
+    //     },
+    //     onResume: (Map<String, dynamic> message) async {
+    //       print('onResume: $message');
     //
-    //     final String notiMessage = _parseNotiMessage(message);
+    //       final String notiMessage = _parseNotiMessage(message);
     //
-    //     Utils.takeDataFromNoti(context, message, loginUserId);
+    //       Utils.takeDataFromNoti(context, message, loginUserId);
     //
-    //     PsSharedPreferences.instance.replaceNotiMessage(
-    //       notiMessage,
-    //     );
-    //   },
-    // );
+    //       PsSharedPreferences.instance.replaceNotiMessage(
+    //         notiMessage,
+    //       );
+    //     },
+    //   );
   }
 
   static dynamic takeDataFromNoti(
@@ -488,11 +480,11 @@ class Utils {
     await notificationProvider.replaceNotiToken(fcmToken);
 
     final NotiRegisterParameterHolder notiRegisterParameterHolder =
-        NotiRegisterParameterHolder(
-            platformName: PsConst.PLATFORM,
-            deviceId: fcmToken,
-            loginUserId:
-                Utils.checkUserLoginId(notificationProvider.psValueHolder));
+    NotiRegisterParameterHolder(
+        platformName: PsConst.PLATFORM,
+        deviceId: fcmToken,
+        loginUserId:
+        Utils.checkUserLoginId(notificationProvider.psValueHolder));
     print('Token Key $fcmToken');
     if (fcmToken != null) {
       await notificationProvider
