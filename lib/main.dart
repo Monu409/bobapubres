@@ -32,13 +32,6 @@ Future<void> main() async {
     _fcm.requestPermission();
   }
 
-  final SharedPreferences prefs = await SharedPreferences.getInstance();
-
-  if (prefs.getString('codeC') == null) {
-    await prefs.setString('codeC', null);
-    await prefs.setString('codeL', null);
-  }
-
 
   NativeAdmob(adUnitID: Utils.getAdAppId());
 
@@ -50,6 +43,13 @@ Future<void> main() async {
       startLocale: PsConfig.defaultLanguage.toLocale(),
       supportedLocales: getSupportedLanguages(),
       child: PSApp()));
+
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+  if (prefs.getString('codeC') == null) {
+    prefs.setString('codeC', '');
+    prefs.setString('codeL', '');
+  }
 }
 
 List<Locale> getSupportedLanguages() {
