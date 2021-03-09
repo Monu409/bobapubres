@@ -18,7 +18,6 @@
     android:name="io.flutter.app.FlutterApplication"
     android:name=".Application" -->
     <application
-        android:name=".Application"
         tools:replace="android:label"
         android:label="BobaPub"
         android:usesCleartextTraffic="true"

@@ -25,7 +25,8 @@ import 'db/common/ps_shared_preferences.dart';
 Future<void> main() async {
   // add this, and it should be the first line in main method
   WidgetsFlutterBinding.ensureInitialized();
-  await EasyLocalization.ensureInitialized();
+  await Firebase.initializeApp();
+  // await EasyLocalization.ensureInitialized();
   final FirebaseMessaging _fcm = FirebaseMessaging.instance;
   if (Platform.isIOS) {
     _fcm.requestPermission();
@@ -38,7 +39,7 @@ Future<void> main() async {
     await prefs.setString('codeL', null);
   }
 
-  Firebase.initializeApp();
+
   NativeAdmob(adUnitID: Utils.getAdAppId());
 
   //check is apple signin is available
